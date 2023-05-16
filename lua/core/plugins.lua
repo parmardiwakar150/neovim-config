@@ -49,6 +49,7 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-nvim-lsp-document-symbol'
     use 'hrsh7th/cmp-nvim-lsp-signature-help'
     use 'onsails/lspkind.nvim'
+    use 'norcalli/nvim-colorizer.lua'
     use { "akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
     end }

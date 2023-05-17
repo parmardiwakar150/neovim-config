@@ -22,6 +22,28 @@ return require('packer').startup(function(use)
     use { "ellisonleao/gruvbox.nvim" }
     use { "catppuccin/nvim", as = "catppuccin" }
     use "rebelot/kanagawa.nvim"
+    use 'folke/tokyonight.nvim'
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end
+    }
+    -- Lua
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+            require("which-key").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    }
+    -- Packer
+    use "sindrets/diffview.nvim"
     use 'nvim-tree/nvim-tree.lua'
     use 'nvim-tree/nvim-web-devicons'
     use {
@@ -41,7 +63,7 @@ return require('packer').startup(function(use)
     use 'haishanh/night-owl.vim'
     use 'tpope/vim-fugitive'
     use { 'L3MON4D3/LuaSnip' }
-    use 'airblade/vim-gitgutter'
+    -- use 'airblade/vim-gitgutter'
     use "princejoogie/tailwind-highlight.nvim"
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'

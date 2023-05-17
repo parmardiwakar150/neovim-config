@@ -11,3 +11,5 @@ vim.o.expandtab = true
 vim.o.smartcase = true
 vim.o.ignorecase = true
 vim.o.termguicolors = true
+vim.o.hls = false
+vim.opt.cursorline = true

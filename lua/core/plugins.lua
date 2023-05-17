@@ -20,6 +20,8 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use { "ellisonleao/gruvbox.nvim" }
+    use { "catppuccin/nvim", as = "catppuccin" }
+    use "rebelot/kanagawa.nvim"
     use 'nvim-tree/nvim-tree.lua'
     use 'nvim-tree/nvim-web-devicons'
     use {
@@ -46,6 +48,13 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
+    use 'dmitmel/cmp-cmdline-history'
+    -- use {
+    --     'VonHeikemen/fine-cmdline.nvim',
+    --     requires = {
+    --         { 'MunifTanjim/nui.nvim' }
+    --     }
+    -- }
     use 'hrsh7th/cmp-nvim-lsp-document-symbol'
     use 'hrsh7th/cmp-nvim-lsp-signature-help'
     use 'onsails/lspkind.nvim'
@@ -77,6 +86,7 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
+    use { "LinArcX/telescope-command-palette.nvim" }
     -- My plugins here
     -- use 'foo1/bar1.nvim'
     -- use 'foo2/bar2.nvim'

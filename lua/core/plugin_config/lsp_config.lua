@@ -3,8 +3,27 @@ require("mason-lspconfig").setup()
 
 local tw_highlight = require('tailwind-highlight')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-require("lspconfig").pylsp.setup {
+-- require("lspconfig").pylsp.setup {
+--     capabilities = capabilities,
+-- }
+require("lspconfig").pyright.setup {
+    -- capabilities = (function()
+    --     local capabilities = vim.lsp.protocol.make_client_capabilities()
+    --     capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
+    --     return capabilities
+    -- end)(),
     capabilities = capabilities,
+    settings = {
+        python = {
+            analysis = {
+                useLibraryCodeForTypes = true,
+                diagnosticSeverityOverrides = {
+                    reportUnusedVariable = "warning", -- or anything
+                },
+                typeCheckingMode = "off",
+            },
+        },
+    },
 }
 require("lspconfig").lua_ls.setup {
     capabilities = capabilities,

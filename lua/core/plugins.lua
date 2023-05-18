@@ -25,6 +25,28 @@ return require('packer').startup(function(use)
     use "rebelot/kanagawa.nvim"
     use 'folke/tokyonight.nvim'
     use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+    use({
+        "glepnir/lspsaga.nvim",
+        opt = true,
+        branch = "main",
+        event = "LspAttach",
+        config = function()
+            require("lspsaga").setup({
+                symbol_in_winbar = {
+                    enable = false,
+                },
+            })
+        end,
+        requires = {
+            { "nvim-tree/nvim-web-devicons" },
+            --Please make sure you install markdown and markdown_inline parser
+            { "nvim-treesitter/nvim-treesitter" }
+        }
+    })
+    use {
         'lewis6991/gitsigns.nvim',
         config = function()
             require('gitsigns').setup()

@@ -2,6 +2,7 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin', '~/.config/nvim/plugged')
 Plug 'unblevable/quick-scope'
+Plug 'psf/black'
 vim.call('plug#end')
 
 local ensure_packer = function()
@@ -29,19 +30,20 @@ return require('packer').startup(function(use)
             require('gitsigns').setup()
         end
     }
+    use 'fedepujol/move.nvim'
     -- Lua
-    use {
-        "folke/which-key.nvim",
-        config = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-            require("which-key").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
-        end
-    }
+    -- use {
+    --     "folke/which-key.nvim",
+    --     config = function()
+    --         vim.o.timeout = true
+    --         vim.o.timeoutlen = 300
+    --         require("which-key").setup {
+    --             -- your configuration comes here
+    --             -- or leave it empty to use the default settings
+    --             -- refer to the configuration section below
+    --         }
+    --     end
+    -- }
     -- Packer
     use "sindrets/diffview.nvim"
     use 'nvim-tree/nvim-tree.lua'

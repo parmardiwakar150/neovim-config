@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
     use 'folke/tokyonight.nvim'
     use "ChristianChiarulli/onedark.nvim"
     use "sainnhe/gruvbox-material"
+    use "lukas-reineke/indent-blankline.nvim"
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end

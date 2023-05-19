@@ -38,14 +38,14 @@ require('lualine').setup {
     },
     sections = {
         lualine_a = { 'mode' },
-        lualine_b = { 'branch', 'diff', 'diagnostics' },
+        lualine_b = { 'branch', 'diff' },
         lualine_c = { {
             'filename',
             symbols = {
                 modified = '●', -- Text to show when the buffer is modified
             },
         } },
-        lualine_x = { 'encoding', 'fileformat', 'filetype' },
+        lualine_x = { 'filetype' },
         -- lualine_x = {os_icon},
         lualine_y = { 'progress' },
         lualine_z = { 'location' }

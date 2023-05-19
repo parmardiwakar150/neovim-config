@@ -25,6 +25,7 @@ return require('packer').startup(function(use)
     use "rebelot/kanagawa.nvim"
     use 'folke/tokyonight.nvim'
     use "ChristianChiarulli/onedark.nvim"
+    use "sainnhe/gruvbox-material"
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end

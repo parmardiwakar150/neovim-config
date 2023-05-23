@@ -5,7 +5,7 @@ vim.keymap.set('n', '<C-b>', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>h', builtin.oldfiles)
 vim.keymap.set('n', '<leader>:', builtin.command_history)
-vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find)
+vim.keymap.set('n', '<leader>/', builtin.lsp_document_symbols)
 vim.keymap.set('n', '<C-p>', builtin.git_files, {})
 vim.keymap.set('n', '<leader>gs', builtin.git_status, {})
 

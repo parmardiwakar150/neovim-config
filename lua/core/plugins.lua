@@ -24,8 +24,9 @@ return require('packer').startup(function(use)
     use { "catppuccin/nvim", as = "catppuccin" }
     use "rebelot/kanagawa.nvim"
     use 'folke/tokyonight.nvim'
-    use "ChristianChiarulli/onedark.nvim"
+    -- use "ChristianChiarulli/onedark.nvim"
     use "sainnhe/gruvbox-material"
+    use 'navarasu/onedark.nvim'
     use "lukas-reineke/indent-blankline.nvim"
     use {
         "windwp/nvim-autopairs",

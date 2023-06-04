@@ -10,7 +10,7 @@ require("toggleterm").setup {
     -- like `size`, width and height can be a number or function which is passed the current terminal
     width = 100,
     height = 20,
-    winblend = 3,
+    winblend = 0,
     zindex = 1000,
   },
 }

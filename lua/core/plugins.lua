@@ -31,6 +31,7 @@ return require('packer').startup(function(use)
     use 'navarasu/onedark.nvim'
     use "lukas-reineke/indent-blankline.nvim"
     use 'HiPhish/nvim-ts-rainbow2'
+    use 'kiyoon/treesitter-indent-object.nvim'
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end

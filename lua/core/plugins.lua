@@ -32,6 +32,12 @@ return require('packer').startup(function(use)
     use "lukas-reineke/indent-blankline.nvim"
     use 'HiPhish/nvim-ts-rainbow2'
     use 'kiyoon/treesitter-indent-object.nvim'
+    use 'nvim-treesitter/nvim-treesitter-context'
+    use({
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        after = "nvim-treesitter",
+        requires = "nvim-treesitter/nvim-treesitter",
+    })
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end

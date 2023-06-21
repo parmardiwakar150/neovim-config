@@ -14,3 +14,13 @@ require("toggleterm").setup {
     zindex = 1000,
   },
 }
+
+vim.keymap.set('n', '<leader>1', ':ToggleTerm 1<CR>', {})
+vim.keymap.set('n', '<leader>2', ':ToggleTerm 2<CR>', {})
+vim.keymap.set('n', '<leader>3', ':ToggleTerm 3<CR>', {})
+vim.keymap.set('n', '<leader>4', ':ToggleTerm 4<CR>', {})
+vim.keymap.set('n', '<leader>5', ':ToggleTerm 5<CR>', {})
+vim.keymap.set('n', '<leader>6', ':ToggleTerm 6<CR>', {})
+vim.keymap.set('n', '<leader>7', ':ToggleTerm 7<CR>', {})
+vim.keymap.set('n', '<leader>8', ':ToggleTerm 8<CR>', {})
+vim.keymap.set('n', '<leader>9', ':ToggleTerm 9<CR>', {})

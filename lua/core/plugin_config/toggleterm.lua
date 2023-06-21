@@ -8,8 +8,8 @@ require("toggleterm").setup {
     -- not natively supported but implemented in this plugin.
     border = 'curved',
     -- like `size`, width and height can be a number or function which is passed the current terminal
-    width = 100,
-    height = 20,
+    width = 125,
+    height = 30,
     winblend = 0,
     zindex = 1000,
   },

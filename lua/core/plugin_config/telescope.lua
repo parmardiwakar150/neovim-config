@@ -12,6 +12,11 @@ vim.keymap.set('n', '<leader>ss', ":Telescope session-lens search_session theme=
 vim.keymap.set('n', '<leader>l', builtin.live_grep, {})
 
 require('telescope').setup({
+    pickers = {
+        colorscheme = {
+            enable_preview = true
+        }
+    },
     extensions = {
         command_palette = {
             { "File",

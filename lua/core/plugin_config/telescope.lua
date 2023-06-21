@@ -8,6 +8,8 @@ vim.keymap.set('n', '<leader>:', builtin.command_history)
 vim.keymap.set('n', '<leader>/', builtin.lsp_document_symbols)
 vim.keymap.set('n', '<C-p>', builtin.git_files, {})
 vim.keymap.set('n', '<leader>gs', builtin.git_status, {})
+vim.keymap.set('n', '<leader>ss', ":Telescope session-lens search_session theme=ivy<CR>", {})
+vim.keymap.set('n', '<leader>l', builtin.live_grep, {})
 
 require('telescope').setup({
     extensions = {

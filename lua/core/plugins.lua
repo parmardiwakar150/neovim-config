@@ -146,6 +146,22 @@ return require('packer').startup(function(use)
     -- use 'RRethy/vim-illuminate'
     use 'tpope/vim-surround'
     use {
+        'sudormrfbin/cheatsheet.nvim',
+
+        requires = {
+            { 'nvim-telescope/telescope.nvim' },
+            { 'nvim-lua/popup.nvim' },
+            { 'nvim-lua/plenary.nvim' },
+        }
+    }
+    use { "akinsho/horizon.nvim", tag = "*" }
+    use { 'akinsho/git-conflict.nvim',
+        tag = "*",
+        config = function()
+            require('git-conflict').setup()
+        end
+    }
+    use {
         "neovim/nvim-lspconfig",
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim"

@@ -58,6 +58,7 @@ return require('packer').startup(function(use)
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
+    use 'NTBBloodbath/doom-one.nvim'
     use({
         "glepnir/lspsaga.nvim",
         opt = true,
@@ -113,6 +114,7 @@ return require('packer').startup(function(use)
             'JoosepAlviste/nvim-ts-context-commentstring',
         },
     }
+    use { 'Everblush/nvim', as = 'everblush' }
     use {
         'numToStr/Navigator.nvim',
         config = function()
@@ -136,6 +138,18 @@ return require('packer').startup(function(use)
     --         { 'MunifTanjim/nui.nvim' }
     --     }
     -- }
+    -- Lua
+
+    use {
+        'olivercederborg/poimandres.nvim',
+        config = function()
+            require('poimandres').setup {
+                -- leave this setup function empty for default config
+                -- or refer to the configuration section
+                -- for configuration options
+            }
+        end
+    }
     use 'hrsh7th/cmp-nvim-lsp-document-symbol'
     use 'hrsh7th/cmp-nvim-lsp-signature-help'
     use 'onsails/lspkind.nvim'
@@ -178,6 +192,9 @@ return require('packer').startup(function(use)
             require('Comment').setup()
         end
     }
+    use 'nvimdev/zephyr-nvim'
+    use 'RRethy/nvim-base16'
+    use 'Shatur/neovim-ayu'
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         -- or                            , branch = '0.1.x',

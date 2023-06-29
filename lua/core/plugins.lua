@@ -54,6 +54,7 @@ return require('packer').startup(function(use)
         after = "nvim-treesitter",
         requires = "nvim-treesitter/nvim-treesitter",
     })
+    use 'ghostbuster91/nvim-next'
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end

@@ -28,9 +28,17 @@ require('onedark').setup {
     },
 
     -- Custom Highlights --
-    colors = {}, -- Override default colors
+    colors = {
+        blue = '#FFD580',
+        -- cyan = '#FFD580',
+        purple = '#FFA759'
+    }, -- Override default colors
     highlights = {
         FloatBorder = { fg = '#61AFEE', bg = 'none' },
+        -- ["@keyword"] = { fg = '$green' },
+        -- ["@keyword.function"] = { fg = '$green' },
+        -- ["@keyword.operator"] = { fg = '$green' },
+        ["@constructor"] = { fmt = "none" },
     }, -- Override highlight groups
 
     -- Plugins Config --
@@ -41,3 +49,4 @@ require('onedark').setup {
     },
 }
 vim.cmd [[ colorscheme onedark ]]
+-- vim.api.nvim_set_hl(0, 'TelescopeSelection', { bg = '#343e4f' })

@@ -42,6 +42,7 @@ return require('packer').startup(function(use)
             }
         end
     }
+    use "folke/trouble.nvim"
     use {
         'rmagatti/session-lens',
         requires = { 'rmagatti/auto-session', 'nvim-telescope/telescope.nvim' },

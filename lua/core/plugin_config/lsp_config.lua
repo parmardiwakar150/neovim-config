@@ -107,12 +107,3 @@ vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 	border = "rounded",
 })
-
-local group = vim.api.nvim_create_augroup("Stylua", {})
-vim.api.nvim_create_autocmd("bufWritePost", {
-	pattern = "*.lua",
-	callback = function()
-		vim.cmd("silent :! stylua %")
-	end,
-	group = group,
-})

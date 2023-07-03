@@ -8,7 +8,7 @@ local opts = { noremap = true, silent = true }
 -- vim.keymap.set('n', '<leader>wb', ':MoveWord(-1)<CR>', opts)
 
 -- Visual-mode commands
-vim.keymap.set('v', '<S-j>', ':MoveBlock(1)<CR>', opts)
-vim.keymap.set('v', '<S-k>', ':MoveBlock(-1)<CR>', opts)
+vim.keymap.set("v", "<S-j>", ":MoveBlock(1)<CR>", opts)
+vim.keymap.set("v", "<S-k>", ":MoveBlock(-1)<CR>", opts)
 -- vim.keymap.set('v', '<A-h>', ':MoveHBlock(-1)<CR>', opts)
 -- vim.keymap.set('v', '<A-l>', ':MoveHBlock(1)<CR>', opts)

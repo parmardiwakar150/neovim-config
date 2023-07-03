@@ -1,77 +1,77 @@
 require("mason").setup()
 require("mason-lspconfig").setup()
 
-local tw_highlight = require('tailwind-highlight')
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local tw_highlight = require("tailwind-highlight")
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- require("lspconfig").pylsp.setup {
 --     capabilities = capabilities,
 -- }
-require("lspconfig").pyright.setup {
-    -- capabilities = (function()
-    --     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    --     capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
-    --     return capabilities
-    -- end)(),
-    capabilities = capabilities,
-    settings = {
-        python = {
-            analysis = {
-                useLibraryCodeForTypes = true,
-                diagnosticSeverityOverrides = {
-                    reportUnusedVariable = "warning", -- or anything
-                },
-                typeCheckingMode = "off",
-            },
-        },
-    },
-}
-require("lspconfig").lua_ls.setup {
-    capabilities = capabilities,
-    settings = {
-        Lua = {
-            runtime = {
-                -- Tell the language server which version of Lua you're using
-                -- (most likely LuaJIT in the case of Neovim)
-                version = 'Lua 5.1',
-            },
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = {
-                    'vim',
-                },
-            },
-            workspace = {
-                -- Make the server aware of Neovim runtime files
-                library = vim.api.nvim_get_runtime_file("", true),
-            },
-            -- Do not send telemetry data containing a randomized but unique identifier
-            telemetry = {
-                enable = false,
-            },
-        },
-    },
-}
-require("lspconfig").tsserver.setup {
-    capabilities = capabilities,
-}
-require("lspconfig").tailwindcss.setup {
-    capabilities = capabilities,
-    on_attach = function(client, bufnr)
-        -- rest of you config
-        tw_highlight.setup(client, bufnr, {
-            single_column = false,
-            mode = 'background',
-            debounce = 200,
-        })
-    end
-}
+require("lspconfig").pyright.setup({
+	-- capabilities = (function()
+	--     local capabilities = vim.lsp.protocol.make_client_capabilities()
+	--     capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
+	--     return capabilities
+	-- end)(),
+	capabilities = capabilities,
+	settings = {
+		python = {
+			analysis = {
+				useLibraryCodeForTypes = true,
+				diagnosticSeverityOverrides = {
+					reportUnusedVariable = "warning", -- or anything
+				},
+				typeCheckingMode = "off",
+			},
+		},
+	},
+})
+require("lspconfig").lua_ls.setup({
+	capabilities = capabilities,
+	settings = {
+		Lua = {
+			runtime = {
+				-- Tell the language server which version of Lua you're using
+				-- (most likely LuaJIT in the case of Neovim)
+				version = "Lua 5.1",
+			},
+			diagnostics = {
+				-- Get the language server to recognize the `vim` global
+				globals = {
+					"vim",
+				},
+			},
+			workspace = {
+				-- Make the server aware of Neovim runtime files
+				library = vim.api.nvim_get_runtime_file("", true),
+			},
+			-- Do not send telemetry data containing a randomized but unique identifier
+			telemetry = {
+				enable = false,
+			},
+		},
+	},
+})
+require("lspconfig").tsserver.setup({
+	capabilities = capabilities,
+})
+require("lspconfig").tailwindcss.setup({
+	capabilities = capabilities,
+	on_attach = function(client, bufnr)
+		-- rest of you config
+		tw_highlight.setup(client, bufnr, {
+			single_column = false,
+			mode = "background",
+			debounce = 200,
+		})
+	end,
+})
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
@@ -105,5 +105,5 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 -- })
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "rounded",
+	border = "rounded",
 })

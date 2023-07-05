@@ -1,22 +1,3 @@
--- local custom_gruvbox = require 'lualine.themes.gruvbox'
-
--- Change the background of lualine_c section for normal mode
--- custom_gruvbox.normal.c.bg = '#112233'
--- local function os_icon()
---     local icons = {
---         unix = '', -- e712
---         dos = '', -- e70f
---         mac = '' -- e711
---     }
---     if vim.fn.has('mac') == 1 then
---         return icons.mac
---     elseif vim.fn.has('win32') == 1 then
---         return icons.dos
---     else
---         return icons.unix
---     end
--- end
-
 require("lualine").setup({
 	options = {
 		icons_enabled = true,

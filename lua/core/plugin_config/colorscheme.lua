@@ -50,3 +50,29 @@ require("onedark").setup({
 })
 vim.cmd([[ colorscheme onedark ]])
 -- vim.api.nvim_set_hl(0, 'TelescopeSelection', { bg = '#343e4f' })
+
+require("gruvbox").setup({
+	undercurl = false,
+	underline = false,
+	bold = false,
+	italic = {
+		strings = false,
+		comments = true,
+		operators = false,
+		folds = true,
+	},
+	strikethrough = false,
+	invert_selection = false,
+	invert_signs = false,
+	invert_tabline = false,
+	invert_intend_guides = false,
+	inverse = true, -- invert background for search, diffs, statuslines and errors
+	contrast = "hard", -- can be "hard", "soft" or empty string
+	palette_overrides = {},
+	overrides = {
+		String = { fg = "#689d6a" },
+	},
+	dim_inactive = false,
+	transparent_mode = true,
+})
+-- vim.cmd("colorscheme gruvbox")

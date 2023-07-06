@@ -76,3 +76,5 @@ require("gruvbox").setup({
 	transparent_mode = true,
 })
 -- vim.cmd("colorscheme gruvbox")
+vim.keymap.set({ "n", "x", "o" }, "<leader>tg", ":colorscheme gruvbox<CR>")
+vim.keymap.set({ "n", "x", "o" }, "<leader>to", ":colorscheme onedark<CR>")

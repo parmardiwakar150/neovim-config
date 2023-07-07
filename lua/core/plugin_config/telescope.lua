@@ -15,6 +15,7 @@ vim.keymap.set("n", "<C-p>", builtin.git_files, {})
 vim.keymap.set("n", "<leader>gs", builtin.git_status, {})
 vim.keymap.set("n", "<leader>ss", ":Telescope session-lens search_session theme=ivy<CR>", {})
 vim.keymap.set("n", "<leader>l", builtin.live_grep, {})
+vim.keymap.set("n", "<leader>fb", builtin.current_buffer_fuzzy_find, {})
 
 require("telescope").setup({
 	defaults = {

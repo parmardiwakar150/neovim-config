@@ -1,3 +1,4 @@
+local utils = require("core.utils")
 local source_current_file = function()
 	if vim.bo.filetype == "lua" then
 		vim.cmd(":source %")
@@ -13,5 +14,6 @@ vim.keymap.set("n", "<C-f>", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader><CR>", source_current_file)
 vim.keymap.set("n", "<leader>rh", ":Gitsigns reset_hunk<CR>")
 vim.keymap.set("n", "<leader>ph", ":Gitsigns preview_hunk<CR>")
+vim.keymap.set("v", "<leader>b", utils.format_visual_selection_with_black_formatter)
 -- vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 -- vim.keymap.set('v', 'K', ":m '>-2<CR>gv=gv")

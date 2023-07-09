@@ -96,6 +96,12 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use("fedepujol/move.nvim")
+	use({
+		"folke/neodev.nvim",
+		config = function()
+			require("neodev").setup()
+		end,
+	})
 	-- Lua
 	-- use {
 	--     "folke/which-key.nvim",

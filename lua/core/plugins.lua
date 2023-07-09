@@ -33,6 +33,7 @@ return require("packer").startup(function(use)
 	use("HiPhish/nvim-ts-rainbow2")
 	use("kiyoon/treesitter-indent-object.nvim")
 	use("nvim-treesitter/nvim-treesitter-context")
+	use("windwp/nvim-ts-autotag")
 	use({
 		"rmagatti/auto-session",
 		config = function()

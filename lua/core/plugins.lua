@@ -83,7 +83,7 @@ local plugins = {
 			--Please make sure you install markdown and markdown_inline parser
 			{ "nvim-treesitter/nvim-treesitter" },
 		},
-		commit = "4f07545",
+		-- commit = "4f07545",
 	},
 	{
 		"lewis6991/gitsigns.nvim",

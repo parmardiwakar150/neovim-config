@@ -85,6 +85,7 @@ return require("packer").startup(function(use)
 			--Please make sure you install markdown and markdown_inline parser
 			{ "nvim-treesitter/nvim-treesitter" },
 		},
+		commit = "4f07545",
 	})
 	use({
 		"lewis6991/gitsigns.nvim",

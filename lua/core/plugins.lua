@@ -75,6 +75,9 @@ return require("packer").startup(function(use)
 				symbol_in_winbar = {
 					enable = false,
 				},
+				lightbulb = {
+					enable = false,
+				},
 			})
 		end,
 		requires = {

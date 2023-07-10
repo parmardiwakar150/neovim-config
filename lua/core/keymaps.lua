@@ -15,5 +15,12 @@ vim.keymap.set("n", "<leader><CR>", source_current_file)
 vim.keymap.set("n", "<leader>rh", ":Gitsigns reset_hunk<CR>")
 vim.keymap.set("n", "<leader>ph", ":Gitsigns preview_hunk<CR>")
 vim.keymap.set("v", "<leader>b", utils.format_visual_selection_with_black_formatter)
+-- Yank into system clipboard
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y') -- yank motion
+vim.keymap.set({ "n", "v" }, "<leader>Y", '"+Y') -- yank line
+
+-- Paste from system clipboard
+vim.keymap.set("n", "<leader>p", '"+p') -- paste after cursor
+vim.keymap.set("n", "<leader>P", '"+P') -- paste before cursor
 -- vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 -- vim.keymap.set('v', 'K', ":m '>-2<CR>gv=gv")

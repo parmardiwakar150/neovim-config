@@ -5,36 +5,35 @@ Plug("unblevable/quick-scope")
 Plug("psf/black")
 vim.call("plug#end")
 
-local ensure_packer = function()
-	local fn = vim.fn
-	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
-		vim.cmd([[packadd packer.nvim]])
-		return true
-	end
-	return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
-
-return require("packer").startup(function(use)
-	use("wbthomason/packer.nvim")
-	use({ "ellisonleao/gruvbox.nvim" })
-	use({ "catppuccin/nvim", as = "catppuccin" })
-	use("rebelot/kanagawa.nvim")
-	use("folke/tokyonight.nvim")
-	use("tiagovla/tokyodark.nvim")
-	use("savq/melange-nvim")
-	use("APZelos/blamer.nvim")
-	use("sainnhe/gruvbox-material")
-	use("navarasu/onedark.nvim")
-	use("lukas-reineke/indent-blankline.nvim")
-	use("HiPhish/nvim-ts-rainbow2")
-	use("kiyoon/treesitter-indent-object.nvim")
-	use("nvim-treesitter/nvim-treesitter-context")
-	use("windwp/nvim-ts-autotag")
-	use({
+local plugins = {
+	{ "ellisonleao/gruvbox.nvim" },
+	{ "catppuccin/nvim", name = "catppuccin" },
+	"rebelot/kanagawa.nvim",
+	"folke/tokyonight.nvim",
+	"tiagovla/tokyodark.nvim",
+	"savq/melange-nvim",
+	"APZelos/blamer.nvim",
+	"sainnhe/gruvbox-material",
+	"navarasu/onedark.nvim",
+	"lukas-reineke/indent-blankline.nvim",
+	"HiPhish/nvim-ts-rainbow2",
+	"kiyoon/treesitter-indent-object.nvim",
+	"nvim-treesitter/nvim-treesitter-context",
+	"windwp/nvim-ts-autotag",
+	{
 		"rmagatti/auto-session",
 		config = function()
 			require("auto-session").setup({
@@ -42,32 +41,31 @@ return require("packer").startup(function(use)
 				auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
 			})
 		end,
-	})
-	use("folke/trouble.nvim")
-	use({
+	},
+	"folke/trouble.nvim",
+	{
 		"rmagatti/session-lens",
-		requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" },
+		dependencies = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" },
 		config = function()
 			require("session-lens").setup({ --[[your custom config--]]
 			})
 		end,
-	})
-	use({
+	},
+	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
-		after = "nvim-treesitter",
-		requires = "nvim-treesitter/nvim-treesitter",
-	})
-	use("ghostbuster91/nvim-next")
-	use({
+		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-treesitter" },
+	},
+	"ghostbuster91/nvim-next",
+	{
 		"windwp/nvim-autopairs",
 		config = function()
 			require("nvim-autopairs").setup({})
 		end,
-	})
-	use("NTBBloodbath/doom-one.nvim")
-	use({
+	},
+	"NTBBloodbath/doom-one.nvim",
+	{
 		"glepnir/lspsaga.nvim",
-		opt = true,
+		lazy = true,
 		branch = "main",
 		event = "LspAttach",
 		config = function()
@@ -80,14 +78,14 @@ return require("packer").startup(function(use)
 				},
 			})
 		end,
-		requires = {
+		dependencies = {
 			{ "nvim-tree/nvim-web-devicons" },
 			--Please make sure you install markdown and markdown_inline parser
 			{ "nvim-treesitter/nvim-treesitter" },
 		},
 		commit = "4f07545",
-	})
-	use({
+	},
+	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup({
@@ -99,71 +97,49 @@ return require("packer").startup(function(use)
 				},
 			})
 		end,
-	})
-	use("fedepujol/move.nvim")
-	use({
+	},
+	"fedepujol/move.nvim",
+	{
 		"folke/neodev.nvim",
 		config = function()
 			require("neodev").setup()
 		end,
-	})
-	-- Lua
-	-- use {
-	--     "folke/which-key.nvim",
-	--     config = function()
-	--         vim.o.timeout = true
-	--         vim.o.timeoutlen = 300
-	--         require("which-key").setup {
-	--             -- your configuration comes here
-	--             -- or leave it empty to use the default settings
-	--             -- refer to the configuration section below
-	--         }
-	--     end
-	-- }
-	-- Packer
-	use("sindrets/diffview.nvim")
-	use("nvim-tree/nvim-tree.lua")
-	use("nvim-tree/nvim-web-devicons")
-	use({
+	},
+	"sindrets/diffview.nvim",
+	"nvim-tree/nvim-tree.lua",
+	"nvim-tree/nvim-web-devicons",
+	{
 		"rmagatti/goto-preview",
 		config = function()
 			require("goto-preview").setup({})
 		end,
-	})
-	use("nvim-lualine/lualine.nvim")
-	use({
+	},
+	"nvim-lualine/lualine.nvim",
+	{
 		"nvim-treesitter/nvim-treesitter",
-		requires = {
+		dependencies = {
 			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
-	})
-	use({ "Everblush/nvim", as = "everblush" })
-	use({
+	},
+	{ "Everblush/nvim", name = "everblush" },
+	{
 		"numToStr/Navigator.nvim",
 		config = function()
 			require("Navigator").setup()
 		end,
-	})
-	use("haishanh/night-owl.vim")
-	use("tpope/vim-fugitive")
-	use({ "L3MON4D3/LuaSnip" })
+	},
+	"haishanh/night-owl.vim",
+	"tpope/vim-fugitive",
+	{ "L3MON4D3/LuaSnip" },
 	-- use 'airblade/vim-gitgutter'
-	use("princejoogie/tailwind-highlight.nvim")
-	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-nvim-lsp")
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-cmdline")
-	use("dmitmel/cmp-cmdline-history")
-	-- use {
-	--     'VonHeikemen/fine-cmdline.nvim',
-	--     requires = {
-	--         { 'MunifTanjim/nui.nvim' }
-	--     }
-	-- }
-	-- Lua
-
-	use({
+	"princejoogie/tailwind-highlight.nvim",
+	"hrsh7th/nvim-cmp",
+	"hrsh7th/cmp-nvim-lsp",
+	"hrsh7th/cmp-buffer",
+	"hrsh7th/cmp-path",
+	"hrsh7th/cmp-cmdline",
+	"dmitmel/cmp-cmdline-history",
+	{
 		"olivercederborg/poimandres.nvim",
 		config = function()
 			require("poimandres").setup({
@@ -172,71 +148,63 @@ return require("packer").startup(function(use)
 				-- for configuration options
 			})
 		end,
-	})
-	use("hrsh7th/cmp-nvim-lsp-document-symbol")
-	use("hrsh7th/cmp-nvim-lsp-signature-help")
-	use("onsails/lspkind.nvim")
-	use("norcalli/nvim-colorizer.lua")
-	use({
+	},
+	"hrsh7th/cmp-nvim-lsp-document-symbol",
+	"hrsh7th/cmp-nvim-lsp-signature-help",
+	"onsails/lspkind.nvim",
+	"norcalli/nvim-colorizer.lua",
+	{
 		"akinsho/toggleterm.nvim",
-		tag = "*",
+		version = "*",
 		config = function()
 			require("toggleterm").setup()
 		end,
-	})
-	-- use 'RRethy/vim-illuminate'
-	use("tpope/vim-surround")
-	use({
+	},
+	"tpope/vim-surround",
+	{
 		"sudormrfbin/cheatsheet.nvim",
 
-		requires = {
+		dependencies = {
 			{ "nvim-telescope/telescope.nvim" },
 			{ "nvim-lua/popup.nvim" },
 			{ "nvim-lua/plenary.nvim" },
 		},
-	})
-	use({ "akinsho/horizon.nvim", tag = "*" })
-	use({
+	},
+	{ "akinsho/horizon.nvim", version = "*" },
+	{
 		"akinsho/git-conflict.nvim",
-		tag = "*",
+		version = "*",
 		config = function()
 			require("git-conflict").setup()
 		end,
-	})
-	use({
+	},
+	{
 		"neovim/nvim-lspconfig",
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
-	})
-	use({
+	},
+	{
 		"gelguy/wilder.nvim",
 		config = function()
 			-- config goes here
 		end,
-	})
-	use({
+	},
+	{
 		"numToStr/Comment.nvim",
 		config = function()
 			require("Comment").setup()
 		end,
-	})
-	use("nvimdev/zephyr-nvim")
-	use("RRethy/nvim-base16")
-	use("Shatur/neovim-ayu")
-	use({
+	},
+	"nvimdev/zephyr-nvim",
+	"RRethy/nvim-base16",
+	"Shatur/neovim-ayu",
+	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.2",
+		version = "0.1.2",
 		-- or                            , branch = '0.1.x',
-		requires = { { "nvim-lua/plenary.nvim" } },
-	})
-	use({ "LinArcX/telescope-command-palette.nvim" })
-	-- My plugins here
-	-- use 'foo1/bar1.nvim'
-	-- use 'foo2/bar2.nvim'
-
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if packer_bootstrap then
-		require("packer").sync()
-	end
-end)
+		dependencies = { { "nvim-lua/plenary.nvim" } },
+	},
+	{ "LinArcX/telescope-command-palette.nvim" },
+}
+local opts = {}
+return require("lazy").setup(plugins, opts)

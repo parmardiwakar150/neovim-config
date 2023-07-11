@@ -33,15 +33,7 @@ local plugins = {
 	"kiyoon/treesitter-indent-object.nvim",
 	"nvim-treesitter/nvim-treesitter-context",
 	"windwp/nvim-ts-autotag",
-	{
-		"rmagatti/auto-session",
-		config = function()
-			require("auto-session").setup({
-				log_level = "error",
-				auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-			})
-		end,
-	},
+	"rmagatti/auto-session",
 	"folke/trouble.nvim",
 	{
 		"rmagatti/session-lens",

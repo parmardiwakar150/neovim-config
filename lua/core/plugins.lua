@@ -1,10 +1,3 @@
-local Plug = vim.fn["plug#"]
-
-vim.call("plug#begin", "~/.config/nvim/plugged")
-Plug("unblevable/quick-scope")
-Plug("psf/black")
-vim.call("plug#end")
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -35,6 +28,8 @@ local plugins = {
 	"windwp/nvim-ts-autotag",
 	"rmagatti/auto-session",
 	"folke/trouble.nvim",
+	"psf/black",
+	"unblevable/quick-scope",
 	{
 		"rmagatti/session-lens",
 		dependencies = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" },

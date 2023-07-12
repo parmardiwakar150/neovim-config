@@ -77,7 +77,13 @@ require("gruvbox").setup({
 })
 -- vim.cmd("colorscheme gruvbox")
 
+require("ayu").setup({
+	mirage = true, -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
+	overrides = {}, -- A dictionary of group names, each associated with a dictionary of parameters (`bg`, `fg`, `sp` and `style`) and colors in hex.
+})
+
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set({ "n", "x", "o" }, "<leader>tg", ":colorscheme gruvbox<CR>", opts)
 vim.keymap.set({ "n", "x", "o" }, "<leader>to", ":colorscheme onedark<CR>", opts)
+vim.keymap.set({ "n", "x", "o" }, "<leader>ta", ":colorscheme ayu<CR>", opts)

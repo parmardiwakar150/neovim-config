@@ -20,4 +20,17 @@ M.format_visual_selection_with_black_formatter = function()
 		vim.api.nvim_buf_delete(buf, {})
 	end
 end
+
+M.list_modified_buffers = function()
+	local all_buffers = vim.api.nvim_list_bufs()
+	local modified_buffers = {}
+	for _, bufnr in ipairs(all_buffers) do
+		local is_modified = vim.api.nvim_buf_get_option(bufnr, "modified")
+		if is_modified then
+			local file = vim.api.nvim_buf_get_name(bufnr)
+			table.insert(modified_buffers, file)
+		end
+	end
+	return modified_buffers
+end
 return M

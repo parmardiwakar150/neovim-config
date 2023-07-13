@@ -1,4 +1,25 @@
 local builtin = require("telescope.builtin")
+local pickers = require("telescope.pickers")
+local finders = require("telescope.finders")
+local conf = require("telescope.config").values
+
+local utils = require("core.utils")
+
+-- Custom Telescope pickers
+local modified_buffers = function(f_opts)
+	f_opts = f_opts or {}
+	pickers
+		.new(f_opts, {
+			prompt_title = "Modified Buffers",
+			finder = finders.new_table({
+				results = utils.list_modified_buffers(),
+			}),
+			sorter = conf.file_sorter(f_opts),
+			previewer = conf.file_previewer(f_opts),
+		})
+		:find()
+end
+
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<leader>ff", builtin.find_files, opts)
 vim.keymap.set("n", "<leader>fg", builtin.grep_string, opts)
@@ -17,6 +38,7 @@ vim.keymap.set("n", "<leader>gs", builtin.git_status, opts)
 vim.keymap.set("n", "<leader>ss", ":Telescope session-lens search_session theme=ivy<CR>", opts)
 vim.keymap.set("n", "<leader>l", builtin.live_grep, opts)
 vim.keymap.set("n", "<leader>fb", builtin.current_buffer_fuzzy_find, opts)
+vim.keymap.set("n", "<leader>fm", modified_buffers, opts)
 
 require("telescope").setup({
 	defaults = {

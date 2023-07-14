@@ -1,6 +1,7 @@
 local builtin = require("telescope.builtin")
 local pickers = require("telescope.pickers")
 local finders = require("telescope.finders")
+local actions = require("telescope.actions")
 local conf = require("telescope.config").values
 
 local utils = require("core.utils")
@@ -43,6 +44,12 @@ vim.keymap.set("n", "<leader>fm", modified_buffers, opts)
 require("telescope").setup({
 	defaults = {
 		prompt_prefix = " ",
+		mappings = {
+			i = {
+				["<esc>"] = actions.close,
+				["<c-d>"] = actions.delete_buffer,
+			},
+		},
 	},
 	pickers = {
 		colorscheme = {

@@ -81,6 +81,7 @@ local plugins = {
 					virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
 					delay = 0,
 					ignore_whitespace = false,
+					update_debounce = 5000,
 				},
 			})
 		end,

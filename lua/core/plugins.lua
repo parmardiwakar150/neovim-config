@@ -90,6 +90,7 @@ local plugins = {
 		end,
 	},
 	"fedepujol/move.nvim",
+	"rmagatti/alternate-toggler",
 	{
 		"folke/neodev.nvim",
 		config = function()

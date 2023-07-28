@@ -202,6 +202,8 @@ local plugins = {
 	"nvimdev/zephyr-nvim",
 	"RRethy/nvim-base16",
 	"Shatur/neovim-ayu",
+	"hiszd/fleet.nvim",
+	"disrupted/one.nvim",
 	{
 		"nvim-telescope/telescope.nvim",
 		version = "0.1.2",

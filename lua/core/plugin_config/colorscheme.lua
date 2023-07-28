@@ -87,3 +87,5 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set({ "n", "x", "o" }, "<leader>tg", ":colorscheme gruvbox<CR>", opts)
 vim.keymap.set({ "n", "x", "o" }, "<leader>to", ":colorscheme onedark<CR>", opts)
 -- vim.keymap.set({ "n", "x", "o" }, "<leader>ta", ":colorscheme ayu<CR>", opts)
+
+require("one").colorscheme()

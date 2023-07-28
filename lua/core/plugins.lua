@@ -18,6 +18,7 @@ local plugins = {
 	"folke/tokyonight.nvim",
 	"tiagovla/tokyodark.nvim",
 	"savq/melange-nvim",
+	"drewtempelmeyer/palenight.vim",
 	"JoosepAlviste/palenightfall.nvim",
 	"mfussenegger/nvim-dap",
 	"rcarriga/nvim-dap-ui",

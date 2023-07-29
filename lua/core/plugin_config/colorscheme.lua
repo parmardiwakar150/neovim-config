@@ -29,9 +29,9 @@ require("onedark").setup({
 
 	-- Custom Highlights --
 	colors = {
-		blue = "#FFD580",
-		-- cyan = '#FFD580',
-		purple = "#FFA759",
+		-- blue = "#FFD580",
+		-- -- cyan = '#FFD580',
+		-- purple = "#FFA759",
 	}, -- Override default colors
 	highlights = {
 		FloatBorder = { fg = "#61AFEE", bg = "none" },

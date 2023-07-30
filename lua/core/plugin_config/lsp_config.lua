@@ -1,7 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup()
 
-local tw_highlight = require("tailwind-highlight")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- require("lspconfig").pylsp.setup {
 --     capabilities = capabilities,
@@ -69,14 +68,6 @@ require("lspconfig").tsserver.setup({
 })
 require("lspconfig").tailwindcss.setup({
 	capabilities = capabilities,
-	on_attach = function(client, bufnr)
-		-- rest of you config
-		tw_highlight.setup(client, bufnr, {
-			single_column = false,
-			mode = "background",
-			debounce = 200,
-		})
-	end,
 })
 
 -- Global mappings.

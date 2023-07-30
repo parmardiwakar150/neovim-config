@@ -128,7 +128,6 @@ cmp.setup.cmdline("/", {
 	}),
 })
 
-local lspkind = require("lspkind")
 cmp.setup({
 	formatting = {
 		format = function(entry, vim_item)

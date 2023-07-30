@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+	-- colorschemes
 	{ "ellisonleao/gruvbox.nvim" },
 	{ "catppuccin/nvim", name = "catppuccin" },
 	"rebelot/kanagawa.nvim",
@@ -20,21 +21,35 @@ local plugins = {
 	"savq/melange-nvim",
 	"drewtempelmeyer/palenight.vim",
 	"JoosepAlviste/palenightfall.nvim",
+	"sainnhe/gruvbox-material",
+	"navarasu/onedark.nvim",
+	"NTBBloodbath/doom-one.nvim",
+	"nvimdev/zephyr-nvim",
+	"RRethy/nvim-base16",
+	"Shatur/neovim-ayu",
+	"hiszd/fleet.nvim",
+	"disrupted/one.nvim",
+	"haishanh/night-owl.vim",
+	{ "akinsho/horizon.nvim", version = "*" },
+	{ "Everblush/nvim", name = "everblush" },
+	{
+		"olivercederborg/poimandres.nvim",
+		config = function()
+			require("poimandres").setup({
+				-- leave this setup function empty for default config
+				-- or refer to the configuration section
+				-- for configuration options
+			})
+		end,
+	},
+
+	-- debugger
 	"mfussenegger/nvim-dap",
 	"rcarriga/nvim-dap-ui",
 	"mfussenegger/nvim-dap-python",
-	"APZelos/blamer.nvim",
-	"sainnhe/gruvbox-material",
-	"navarasu/onedark.nvim",
-	"lukas-reineke/indent-blankline.nvim",
-	"HiPhish/nvim-ts-rainbow2",
-	"kiyoon/treesitter-indent-object.nvim",
-	"nvim-treesitter/nvim-treesitter-context",
-	"windwp/nvim-ts-autotag",
+
+	-- session
 	"rmagatti/auto-session",
-	"folke/trouble.nvim",
-	"psf/black",
-	"unblevable/quick-scope",
 	{
 		"rmagatti/session-lens",
 		dependencies = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" },
@@ -43,18 +58,28 @@ local plugins = {
 			})
 		end,
 	},
+
+	-- treesitter
+	{
+		"nvim-treesitter/nvim-treesitter",
+		dependencies = {
+			"JoosepAlviste/nvim-ts-context-commentstring",
+		},
+	},
+	"lukas-reineke/indent-blankline.nvim",
+	"HiPhish/nvim-ts-rainbow2",
+	"kiyoon/treesitter-indent-object.nvim",
+	"nvim-treesitter/nvim-treesitter-context",
+	"windwp/nvim-ts-autotag",
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-treesitter" },
 	},
-	"ghostbuster91/nvim-next",
-	{
-		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup({})
-		end,
-	},
-	"NTBBloodbath/doom-one.nvim",
+
+	-- LSP
+	"neovim/nvim-lspconfig",
+	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
 	{
 		"glepnir/lspsaga.nvim",
 		lazy = true,
@@ -77,6 +102,22 @@ local plugins = {
 		},
 		commit = "4f07545",
 	},
+
+	-- completion
+	"hrsh7th/nvim-cmp",
+	"hrsh7th/cmp-nvim-lsp",
+	"hrsh7th/cmp-nvim-lua",
+	"hrsh7th/cmp-buffer",
+	"hrsh7th/cmp-path",
+	"hrsh7th/cmp-cmdline",
+	"dmitmel/cmp-cmdline-history",
+	"hrsh7th/cmp-nvim-lsp-document-symbol",
+	"hrsh7th/cmp-nvim-lsp-signature-help",
+	{ "L3MON4D3/LuaSnip" },
+
+	-- git
+	"sindrets/diffview.nvim",
+	"tpope/vim-fugitive",
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
@@ -91,80 +132,15 @@ local plugins = {
 			})
 		end,
 	},
-	"fedepujol/move.nvim",
-	"rmagatti/alternate-toggler",
+
+	-- telescope
 	{
-		"folke/neodev.nvim",
-		config = function()
-			require("neodev").setup()
-		end,
+		"nvim-telescope/telescope.nvim",
+		version = "0.1.2",
+		-- or                            , branch = '0.1.x',
+		dependencies = { { "nvim-lua/plenary.nvim" } },
 	},
-	{
-		"folke/todo-comments.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-		},
-	},
-	"sindrets/diffview.nvim",
-	"nvim-tree/nvim-tree.lua",
-	"nvim-tree/nvim-web-devicons",
-	{
-		"rmagatti/goto-preview",
-		config = function()
-			require("goto-preview").setup({})
-		end,
-	},
-	"nvim-lualine/lualine.nvim",
-	{
-		"nvim-treesitter/nvim-treesitter",
-		dependencies = {
-			"JoosepAlviste/nvim-ts-context-commentstring",
-		},
-	},
-	{ "Everblush/nvim", name = "everblush" },
-	{
-		"numToStr/Navigator.nvim",
-		config = function()
-			require("Navigator").setup()
-		end,
-	},
-	"haishanh/night-owl.vim",
-	"tpope/vim-fugitive",
-	{ "L3MON4D3/LuaSnip" },
-	-- use 'airblade/vim-gitgutter'
-	"princejoogie/tailwind-highlight.nvim",
-	"hrsh7th/nvim-cmp",
-	"hrsh7th/cmp-nvim-lsp",
-	"hrsh7th/cmp-nvim-lua",
-	"hrsh7th/cmp-buffer",
-	"hrsh7th/cmp-path",
-	"hrsh7th/cmp-cmdline",
-	"dmitmel/cmp-cmdline-history",
-	{
-		"olivercederborg/poimandres.nvim",
-		config = function()
-			require("poimandres").setup({
-				-- leave this setup function empty for default config
-				-- or refer to the configuration section
-				-- for configuration options
-			})
-		end,
-	},
-	"hrsh7th/cmp-nvim-lsp-document-symbol",
-	"hrsh7th/cmp-nvim-lsp-signature-help",
-	"onsails/lspkind.nvim",
-	"norcalli/nvim-colorizer.lua",
-	{
-		"akinsho/toggleterm.nvim",
-		version = "*",
-		config = function()
-			require("toggleterm").setup()
-		end,
-	},
-	"tpope/vim-surround",
+	{ "LinArcX/telescope-command-palette.nvim" },
 	{
 		"sudormrfbin/cheatsheet.nvim",
 
@@ -174,23 +150,39 @@ local plugins = {
 			{ "nvim-lua/plenary.nvim" },
 		},
 	},
-	{ "akinsho/horizon.nvim", version = "*" },
+
+	-- miscellaneous
+	"rmagatti/alternate-toggler",
+	"nvim-tree/nvim-tree.lua",
+	"nvim-tree/nvim-web-devicons",
+	"nvim-lualine/lualine.nvim",
+	"folke/trouble.nvim",
+	"psf/black",
+	"unblevable/quick-scope",
+	"ghostbuster91/nvim-next",
+	"tpope/vim-surround",
 	{
-		"akinsho/git-conflict.nvim",
-		version = "*",
+		"folke/neodev.nvim",
 		config = function()
-			require("git-conflict").setup()
+			require("neodev").setup()
 		end,
 	},
 	{
-		"neovim/nvim-lspconfig",
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {},
 	},
 	{
-		"gelguy/wilder.nvim",
+		"numToStr/Navigator.nvim",
 		config = function()
-			-- config goes here
+			require("Navigator").setup()
+		end,
+	},
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		config = function()
+			require("toggleterm").setup()
 		end,
 	},
 	{
@@ -199,18 +191,12 @@ local plugins = {
 			require("Comment").setup()
 		end,
 	},
-	"nvimdev/zephyr-nvim",
-	"RRethy/nvim-base16",
-	"Shatur/neovim-ayu",
-	"hiszd/fleet.nvim",
-	"disrupted/one.nvim",
 	{
-		"nvim-telescope/telescope.nvim",
-		version = "0.1.2",
-		-- or                            , branch = '0.1.x',
-		dependencies = { { "nvim-lua/plenary.nvim" } },
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
 	},
-	{ "LinArcX/telescope-command-palette.nvim" },
 }
 local opts = {}
 return require("lazy").setup(plugins, opts)

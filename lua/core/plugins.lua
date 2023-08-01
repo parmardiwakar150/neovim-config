@@ -67,7 +67,7 @@ local plugins = {
 		},
 	},
 	"lukas-reineke/indent-blankline.nvim",
-	"HiPhish/nvim-ts-rainbow2",
+	"hiphish/rainbow-delimiters.nvim",
 	"kiyoon/treesitter-indent-object.nvim",
 	"nvim-treesitter/nvim-treesitter-context",
 	"windwp/nvim-ts-autotag",

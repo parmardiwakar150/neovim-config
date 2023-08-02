@@ -116,7 +116,7 @@ local plugins = {
 	{ "L3MON4D3/LuaSnip" },
 
 	-- git
-	"sindrets/diffview.nvim",
+	{ "sindrets/diffview.nvim", commit = "766a4f2" },
 	"tpope/vim-fugitive",
 	{
 		"lewis6991/gitsigns.nvim",

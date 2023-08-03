@@ -59,13 +59,13 @@ cmp.setup({
 		["<C-e>"] = cmp.mapping.abort(),
 		["<CR>"] = cmp.mapping({
 			i = cmp.mapping.confirm({ select = true }),
-			c = function(fallback)
-				if cmp.visible() then
-					cmp.confirm({ select = true })
-				else
-					fallback()
-				end
-			end,
+			-- c = function(fallback)
+			-- 	if cmp.visible() then
+			-- 		cmp.confirm({ select = true })
+			-- 	else
+			-- 		fallback()
+			-- 	end
+			-- end,
 		}),
 
 		["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
@@ -125,9 +125,9 @@ cmp.setup.cmdline(":", {
 	sources = cmp.config.sources({
 		{ name = "path" },
 	}, {
-		{ name = "cmdline", keyword_length = 2 },
+		{ name = "cmdline" },
 	}, {
-		{ name = "cmdline_history", max_item_count = 2 },
+		{ name = "cmdline_history" },
 	}),
 })
 cmp.setup.cmdline("/", {

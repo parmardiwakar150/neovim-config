@@ -1,6 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "d0cbbfb539898a275dc4398446ab0ae3b94819bf" },
-  "LuaSnip": { "branch": "master", "commit": "e81cbe6004051c390721d8570a4a0541ceb0df10" },
+  "LuaSnip": { "branch": "master", "commit": "99a94cc35ec99bf06263d0346128e908a204575c" },
   "Navigator.nvim": { "branch": "master", "commit": "91d86506ac2a039504d5205d32a1d4bc7aa57072" },
   "alternate-toggler": { "branch": "main", "commit": "9925bcfd7cee04b6c1f43c23edcf6c878552b7db" },
   "auto-session": { "branch": "main", "commit": "7afbb149f87be279778689596c781882014f7eef" },
@@ -59,6 +59,7 @@
   "quick-scope": { "branch": "master", "commit": "ba61c6250c637a1bc59f7023c23bcaf75e6767cd" },
   "rainbow-delimiters.nvim": { "branch": "master", "commit": "c6380e218a2b4ffcc957a71606900a24e5c7b618" },
   "session-lens": { "branch": "main", "commit": "1b65d8e1bcd1836c5135cce118ba18d662a9dabd" },
+  "tabout.nvim": { "branch": "master", "commit": "0d275c8d25f32457e67b5c66d6ae43f26a61bce5" },
   "telescope-command-palette.nvim": { "branch": "master", "commit": "9ce81be757b71785bde9272c947e76b4743dceeb" },
   "telescope.nvim": { "branch": "master", "commit": "776b509f80dd49d8205b9b0d94485568236d1192" },
   "todo-comments.nvim": { "branch": "main", "commit": "3094ead8edfa9040de2421deddec55d3762f64d1" },

@@ -197,6 +197,10 @@ local plugins = {
 			require("nvim-autopairs").setup({})
 		end,
 	},
+	{
+		"abecodes/tabout.nvim",
+		dependencies = { "nvim-treesitter", "nvim-cmp" },
+	},
 }
 local opts = {}
 return require("lazy").setup(plugins, opts)

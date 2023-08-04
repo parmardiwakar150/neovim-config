@@ -1,5 +1,8 @@
 # Neovim Config
 
+![Showcase 1](images/showcase1.png)
+![Showcase 2](images/showcase2.png)
+
 ## How to setup
 
 Backup or delete your current nvim config

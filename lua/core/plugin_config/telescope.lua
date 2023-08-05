@@ -3,6 +3,8 @@ local pickers = require("telescope.pickers")
 local finders = require("telescope.finders")
 local actions = require("telescope.actions")
 local conf = require("telescope.config").values
+local lga_actions = require("telescope-live-grep-args.actions")
+local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
 
 local utils = require("core.utils")
 
@@ -37,7 +39,9 @@ vim.keymap.set("n", "<leader>/", builtin.lsp_document_symbols, opts)
 vim.keymap.set("n", "<C-p>", builtin.git_files, opts)
 vim.keymap.set("n", "<leader>gs", builtin.git_status, opts)
 vim.keymap.set("n", "<leader>ss", ":Telescope session-lens search_session theme=ivy<CR>", opts)
-vim.keymap.set("n", "<leader>l", builtin.live_grep, opts)
+-- vim.keymap.set("n", "<leader>l", builtin.live_grep, opts)
+vim.keymap.set("n", "<leader>l", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opts)
+vim.keymap.set("n", "<leader>gw", live_grep_args_shortcuts.grep_word_under_cursor)
 vim.keymap.set("n", "<leader>fb", builtin.current_buffer_fuzzy_find, opts)
 vim.keymap.set("n", "<leader>fm", modified_buffers, opts)
 
@@ -99,8 +103,17 @@ require("telescope").setup({
 				{ "search highlighting (F12)", ":set hlsearch!" },
 			},
 		},
+		live_grep_args = {
+			auto_quoting = true,
+			mappings = {
+				i = {
+					["<C-i>"] = lga_actions.quote_prompt({ postfix = " -t" }),
+				},
+			},
+		},
 	},
 })
 
 require("telescope").load_extension("command_palette")
 require("telescope").load_extension("session-lens")
+require("telescope").load_extension("live_grep_args")

@@ -141,6 +141,7 @@ local plugins = {
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 	},
 	{ "LinArcX/telescope-command-palette.nvim" },
+	{ "nvim-telescope/telescope-live-grep-args.nvim" },
 	{
 		"sudormrfbin/cheatsheet.nvim",
 

@@ -151,6 +151,7 @@ cmp.setup({
 				nvim_lua = "[Lua]",
 				latex_symbols = "[LaTeX]",
 			})[entry.source.name]
+			vim_item.abbr = string.sub(vim_item.abbr, 1, 30)
 			return vim_item
 		end,
 	},

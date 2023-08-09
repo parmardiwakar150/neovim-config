@@ -17,6 +17,7 @@ vim.keymap.set("n", "<leader>rh", ":Gitsigns reset_hunk<CR>", opts)
 vim.keymap.set("n", "<leader>ph", ":Gitsigns preview_hunk<CR>", opts)
 vim.keymap.set("n", "<leader>ta", ":ToggleAlternate<CR>", opts)
 vim.keymap.set("v", "<leader>b", utils.format_visual_selection_with_black_formatter, opts)
+vim.keymap.set("n", "<leader>cc", utils.compare_to_clipboard, opts)
 -- Yank into system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', opts) -- yank motion
 vim.keymap.set({ "n", "v" }, "<leader>Y", '"+Y', opts) -- yank line

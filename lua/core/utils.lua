@@ -33,4 +33,12 @@ M.list_modified_buffers = function()
 	end
 	return modified_buffers
 end
+M.compare_to_clipboard = function()
+	local filetype = vim.api.nvim_buf_get_option(0, "filetype")
+	vim.cmd("vnew")
+	vim.cmd('normal! "0p')
+	vim.cmd("setlocal buftype=nowrite bufhidden=wipe nobuflisted")
+	vim.cmd("set filetype=" .. filetype)
+	vim.cmd("windo diffthis")
+end
 return M

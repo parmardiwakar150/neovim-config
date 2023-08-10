@@ -53,6 +53,10 @@ require("telescope").setup({
 			i = {
 				["<esc>"] = actions.close,
 				["<c-d>"] = actions.delete_buffer,
+				["<c-q>"] = function(bufnr)
+					actions.smart_send_to_qflist(bufnr)
+					vim.cmd("Trouble quickfix")
+				end,
 			},
 		},
 		sorting_strategy = "ascending",

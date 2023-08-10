@@ -55,6 +55,17 @@ require("telescope").setup({
 				["<c-d>"] = actions.delete_buffer,
 			},
 		},
+		sorting_strategy = "ascending",
+		layout_strategy = "bottom_pane",
+		layout_config = {
+			height = 25,
+		},
+		border = true,
+		borderchars = {
+			prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
+			results = { " " },
+			preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+		},
 	},
 	pickers = {
 		colorscheme = {

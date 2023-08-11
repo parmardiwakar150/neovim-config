@@ -216,5 +216,7 @@ local plugins = {
 		opts = {},
 	},
 }
-local opts = {}
+local opts = {
+	ui = { border = "rounded" },
+}
 return require("lazy").setup(plugins, opts)

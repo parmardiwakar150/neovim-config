@@ -206,6 +206,15 @@ local plugins = {
 		"abecodes/tabout.nvim",
 		dependencies = { "nvim-treesitter", "nvim-cmp" },
 	},
+	{
+		"luckasRanarison/nvim-devdocs",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		opts = {},
+	},
 }
 local opts = {}
 return require("lazy").setup(plugins, opts)

@@ -35,6 +35,7 @@ require("onedark").setup({
 	}, -- Override default colors
 	highlights = {
 		FloatBorder = { fg = "#61AFEE", bg = "none" },
+		NormalFloat = { bg = "none" },
 		-- ["@keyword"] = { fg = '$green' },
 		-- ["@keyword.function"] = { fg = '$green' },
 		-- ["@keyword.operator"] = { fg = '$green' },

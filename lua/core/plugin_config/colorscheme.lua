@@ -40,6 +40,7 @@ require("onedark").setup({
 		-- ["@keyword.function"] = { fg = '$green' },
 		-- ["@keyword.operator"] = { fg = '$green' },
 		["@constructor"] = { fmt = "none" },
+		["@text.uri"] = { fmt = "none" },
 	}, -- Override highlight groups
 
 	-- Plugins Config --

@@ -50,7 +50,7 @@ require("onedark").setup({
 		background = true, -- use background color for virtual text
 	},
 })
--- vim.cmd([[ colorscheme onedark ]])
+vim.cmd([[ colorscheme onedark ]])
 -- vim.api.nvim_set_hl(0, 'TelescopeSelection', { bg = '#343e4f' })
 
 require("gruvbox").setup({
@@ -149,7 +149,7 @@ require("kanagawa").setup({
 })
 
 -- setup must be called before loading
-vim.cmd("colorscheme kanagawa")
+-- vim.cmd("colorscheme kanagawa")
 
 local opts = { noremap = true, silent = true }
 

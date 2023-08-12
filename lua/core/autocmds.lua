@@ -12,3 +12,12 @@ vim.api.nvim_create_autocmd("bufWritePost", {
 	end,
 	group = group,
 })
+
+local format_on_save_group = vim.api.nvim_create_augroup("FormatOnSave", { clear = true })
+vim.api.nvim_create_autocmd("bufWritePost", {
+	pattern = { "*.c", "*.cpp" },
+	callback = function()
+		vim.lsp.buf.format()
+	end,
+	group = format_on_save_group,
+})

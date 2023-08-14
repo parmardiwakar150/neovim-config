@@ -180,9 +180,6 @@ local plugins = {
 	},
 	{
 		"numToStr/Navigator.nvim",
-		config = function()
-			require("Navigator").setup()
-		end,
 	},
 	{
 		"akinsho/toggleterm.nvim",

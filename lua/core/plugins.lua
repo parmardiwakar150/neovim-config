@@ -159,6 +159,7 @@ local plugins = {
 
 	-- miscellaneous
 	"rmagatti/alternate-toggler",
+	"fedepujol/move.nvim",
 	"nvim-tree/nvim-tree.lua",
 	"nvim-tree/nvim-web-devicons",
 	"nvim-lualine/lualine.nvim",

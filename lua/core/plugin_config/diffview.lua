@@ -506,6 +506,7 @@ require("diffview").setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>do", ":DiffviewOpen<CR>", {})
-vim.keymap.set("n", "<leader>dc", ":DiffviewClose<CR>", {})
-vim.keymap.set("n", "<leader>dh", ":DiffviewFileHistory<CR>", {})
+local opts = { noremap = true, silent = true }
+vim.keymap.set("n", "<leader>do", ":DiffviewOpen<CR>", opts)
+vim.keymap.set("n", "<leader>dc", ":DiffviewClose<CR>", opts)
+vim.keymap.set("n", "<leader>dh", ":DiffviewFileHistory<CR>", opts)

@@ -224,6 +224,7 @@ local plugins = {
 	},
 }
 local opts = {
+	install = { colorscheme = { "tokyonight" } },
 	ui = { border = "rounded" },
 }
 return require("lazy").setup(plugins, opts)

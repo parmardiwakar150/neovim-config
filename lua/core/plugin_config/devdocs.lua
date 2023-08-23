@@ -9,7 +9,7 @@ require("nvim-devdocs").setup({
 	float_win = {
 		relative = "editor",
 		height = math.floor(vim.o.lines * 0.7),
-		width = math.floor(vim.o.columns * 0.8),
+		width = math.floor(vim.o.columns * 0.7),
 		border = "rounded",
 	},
 	wrap = true,

@@ -45,6 +45,12 @@ vim.keymap.set("n", "<leader>gw", live_grep_args_shortcuts.grep_word_under_curso
 vim.keymap.set("v", "<leader>l", live_grep_args_shortcuts.grep_visual_selection)
 vim.keymap.set("n", "<leader>fb", builtin.current_buffer_fuzzy_find, opts)
 vim.keymap.set("n", "<leader>fm", modified_buffers, opts)
+vim.keymap.set("n", "<leader>m", function()
+	builtin.man_pages({ sections = { "ALL" } })
+end, opts)
+vim.keymap.set("n", "<leader>cm", function()
+	builtin.man_pages({ default_text = vim.fn.expand("<cword>"), sections = { "ALL" } })
+end, opts)
 
 require("telescope").setup({
 	defaults = {

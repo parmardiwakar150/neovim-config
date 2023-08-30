@@ -10,6 +10,20 @@ require("toggleterm").setup({
 		-- like `size`, width and height can be a number or function which is passed the current terminal
 		-- width = 125,
 		-- height = 30,
+		width = function()
+			local width_ratio = 0.75
+			if vim.o.columns < 130 then
+				width_ratio = 0.9
+			end
+			return math.floor(vim.o.columns * width_ratio)
+		end,
+		height = function()
+			local height_ratio = 0.75
+			if vim.o.lines < 40 then
+				height_ratio = 0.9
+			end
+			return math.floor(vim.o.lines * height_ratio)
+		end,
 		winblend = 0,
 		zindex = 1000,
 	},

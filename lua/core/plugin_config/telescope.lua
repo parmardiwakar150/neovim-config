@@ -34,7 +34,7 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
 -- vim.keymap.set("n", "<leader>h", builtin.oldfiles, opts)
-vim.keymap.set("n", "<leader>h", builtin.command_history, opts)
+vim.keymap.set("n", "<leader>ch", builtin.command_history, opts)
 vim.keymap.set("n", "<leader>/", builtin.lsp_document_symbols, opts)
 vim.keymap.set("n", "<C-p>", builtin.git_files, opts)
 vim.keymap.set("n", "<leader>gs", builtin.git_status, opts)

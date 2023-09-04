@@ -52,6 +52,7 @@ require("onedark").setup({
 })
 vim.cmd([[ colorscheme onedark ]])
 -- vim.api.nvim_set_hl(0, 'TelescopeSelection', { bg = '#343e4f' })
+vim.api.nvim_set_hl(0, "SagaBorder", { bg = "none", fg = "#61AFEE" })
 
 require("gruvbox").setup({
 	undercurl = false,

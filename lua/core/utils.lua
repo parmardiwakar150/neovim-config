@@ -41,4 +41,24 @@ M.compare_to_clipboard = function()
 	vim.cmd("set filetype=" .. filetype)
 	vim.cmd("windo diffthis")
 end
+
+M.get_float_win_width = function()
+	local width_ratio = 0.6
+	local columns = vim.o.columns
+	if columns < 130 then
+		width_ratio = 0.9
+	elseif columns > 150 and columns < 200 then
+		width_ratio = 0.75
+	end
+	return math.floor(vim.o.columns * width_ratio)
+end
+
+M.get_float_win_height = function()
+	local height_ratio = 0.7
+	local lines = vim.o.lines
+	if lines < 40 then
+		height_ratio = 0.9
+	end
+	return math.floor(vim.o.lines * height_ratio)
+end
 return M

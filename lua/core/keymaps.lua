@@ -20,7 +20,11 @@ vim.keymap.set("n", "<leader>sh", ":Gitsigns select_hunk<CR>", opts)
 vim.keymap.set("n", "<leader>ta", ":ToggleAlternate<CR>", opts)
 vim.keymap.set("v", "<leader>b", utils.format_visual_selection_with_black_formatter, opts)
 vim.keymap.set("n", "<leader>cc", utils.compare_to_clipboard, opts)
-vim.keymap.set("n", "<leader>od", "<cmd>DevdocsOpenFloat<CR>", opts)
+vim.keymap.set("n", "<leader>od", function()
+	local devdocs_config_file_path = vim.fn.stdpath("config") .. "/lua/core/plugin_config/devdocs.lua"
+	vim.cmd("source " .. devdocs_config_file_path)
+	vim.cmd("DevdocsOpenFloat")
+end, opts)
 -- Yank into system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', opts) -- yank motion
 vim.keymap.set({ "n", "v" }, "<leader>Y", '"+Y', opts) -- yank line

@@ -141,20 +141,10 @@ local plugins = {
 		-- or                            , branch = '0.1.x',
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 	},
-	{ "LinArcX/telescope-command-palette.nvim" },
 	{ "nvim-telescope/telescope-live-grep-args.nvim" },
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
 		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-	},
-	{
-		"sudormrfbin/cheatsheet.nvim",
-
-		dependencies = {
-			{ "nvim-telescope/telescope.nvim" },
-			{ "nvim-lua/popup.nvim" },
-			{ "nvim-lua/plenary.nvim" },
-		},
 	},
 
 	-- miscellaneous

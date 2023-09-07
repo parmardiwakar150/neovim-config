@@ -71,6 +71,11 @@ local plugins = {
 	"kiyoon/treesitter-indent-object.nvim",
 	"nvim-treesitter/nvim-treesitter-context",
 	"windwp/nvim-ts-autotag",
+	"Wansmer/treesj",
+	{
+		"axelvc/template-string.nvim",
+		opts = { remove_template_string = true },
+	},
 	"ziontee113/syntax-tree-surfer",
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",

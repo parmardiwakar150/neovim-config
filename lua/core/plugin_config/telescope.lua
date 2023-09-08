@@ -103,4 +103,3 @@ require("telescope").setup({
 require("telescope").load_extension("session-lens")
 require("telescope").load_extension("live_grep_args")
 require("telescope").load_extension("fzf")
-require("telescope").load_extension("harpoon")

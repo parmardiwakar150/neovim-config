@@ -163,7 +163,6 @@ local plugins = {
 	"unblevable/quick-scope",
 	"ghostbuster91/nvim-next",
 	"tpope/vim-surround",
-	"ThePrimeagen/harpoon",
 	"tpope/vim-abolish",
 	{
 		"folke/neodev.nvim",

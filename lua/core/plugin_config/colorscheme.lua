@@ -36,6 +36,7 @@ require("onedark").setup({
 	highlights = {
 		FloatBorder = { fg = "#2d3343", bg = "#2d3343" },
 		NormalFloat = { bg = "#2d3343" },
+		IndentBlankLineContextChar = { fg = "#67b0e8" },
 		-- ["@keyword"] = { fg = '$green' },
 		-- ["@keyword.function"] = { fg = '$green' },
 		-- ["@keyword.operator"] = { fg = '$green' },

@@ -153,6 +153,21 @@ require("kanagawa").setup({
 -- setup must be called before loading
 -- vim.cmd("colorscheme kanagawa")
 
+require("everblush").setup({
+	override = {
+		TelescopeSelection = { bg = "#2c3333" },
+		VertSplit = { bg = "none", fg = "#363c51" },
+		NormalFloat = { bg = "#2c3333" },
+		FloatBorder = { fg = "#2c3333", bg = "#2c3333" },
+		["@exception"] = { fg = "#67b0e8" },
+	},
+	transparent_background = false,
+	nvim_tree = {
+		contrast = false,
+	},
+})
+-- vim.cmd("colorscheme everblush")
+
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set({ "n", "x", "o" }, "<leader>tg", ":colorscheme gruvbox<CR>", opts)

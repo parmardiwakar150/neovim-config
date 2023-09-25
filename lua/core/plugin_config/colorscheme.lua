@@ -159,6 +159,7 @@ require("everblush").setup({
 		VertSplit = { bg = "none", fg = "#363c51" },
 		NormalFloat = { bg = "#2c3333" },
 		FloatBorder = { fg = "#2c3333", bg = "#2c3333" },
+		CursorLineNr = { fg = "#a5b0c5" },
 		["@exception"] = { fg = "#67b0e8" },
 	},
 	transparent_background = false,

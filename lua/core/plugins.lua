@@ -166,12 +166,6 @@ local plugins = {
 	"tpope/vim-surround",
 	"tpope/vim-abolish",
 	{
-		"folke/neodev.nvim",
-		config = function()
-			require("neodev").setup()
-		end,
-	},
-	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = {},

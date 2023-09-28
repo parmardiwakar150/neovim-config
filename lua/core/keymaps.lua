@@ -21,6 +21,7 @@ vim.keymap.set("n", "<leader>ta", ":ToggleAlternate<CR>", opts)
 vim.keymap.set("n", "<leader><leader>", ":lua require('treesj').toggle()<CR>", opts)
 vim.keymap.set("v", "<leader>b", utils.format_visual_selection_with_black_formatter, opts)
 vim.keymap.set("n", "<leader>cc", utils.compare_to_clipboard, opts)
+vim.keymap.set("n", "<leader>tt", ":TSBufToggle highlight<CR>", opts)
 vim.keymap.set("n", "<leader>od", function()
 	local devdocs_config_file_path = vim.fn.stdpath("config") .. "/lua/core/plugin_config/devdocs.lua"
 	vim.cmd("source " .. devdocs_config_file_path)

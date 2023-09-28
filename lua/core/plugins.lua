@@ -67,7 +67,7 @@ local plugins = {
 			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
 	},
-	"lukas-reineke/indent-blankline.nvim",
+	{ "lukas-reineke/indent-blankline.nvim", version = "2.20.8" },
 	"hiphish/rainbow-delimiters.nvim",
 	"kiyoon/treesitter-indent-object.nvim",
 	"nvim-treesitter/nvim-treesitter-context",

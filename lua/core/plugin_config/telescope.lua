@@ -51,6 +51,7 @@ end, opts)
 vim.keymap.set("n", "<leader>cm", function()
 	builtin.man_pages({ default_text = vim.fn.expand("<cword>"), sections = { "ALL" } })
 end, opts)
+vim.keymap.set("n", "<leader>tw", ":Telescope whop<CR>", { noremap = true, desc = "whop.nvim (telescope)" })
 
 require("telescope").setup({
 	defaults = {
@@ -103,3 +104,4 @@ require("telescope").setup({
 require("telescope").load_extension("session-lens")
 require("telescope").load_extension("live_grep_args")
 require("telescope").load_extension("fzf")
+require("telescope").load_extension("whop")

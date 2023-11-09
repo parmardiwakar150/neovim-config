@@ -62,6 +62,19 @@ M.get_float_win_height = function()
 	return math.floor(vim.o.lines * height_ratio)
 end
 
+M.generate_password = function()
+	local buf = vim.api.nvim_create_buf(false, true)
+	local cmd =
+		"r !python -c \"import secrets, string; print(''.join(secrets.choice(string.ascii_letters + string.digits) for _ in range(8)))\""
+	vim.api.nvim_buf_call(buf, function()
+		vim.cmd(cmd)
+		vim.cmd('normal "+yiw')
+		local password = vim.fn.getreg("+")
+		print("Password " .. password)
+	end)
+	vim.api.nvim_buf_delete(buf, {})
+end
+
 vim.api.nvim_create_user_command("DiagnosticToggle", function()
 	local config = vim.diagnostic.config
 	local vt = config().virtual_text

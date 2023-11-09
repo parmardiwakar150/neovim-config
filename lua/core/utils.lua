@@ -65,7 +65,7 @@ end
 M.generate_password = function()
 	local buf = vim.api.nvim_create_buf(false, true)
 	local cmd =
-		"r !python -c \"import secrets, string; print(''.join(secrets.choice(string.ascii_letters + string.digits) for _ in range(8)))\""
+		"r !python3 -c \"import secrets, string; print(''.join(secrets.choice(string.ascii_letters + string.digits) for _ in range(8)))\""
 	vim.api.nvim_buf_call(buf, function()
 		vim.cmd(cmd)
 		vim.cmd('normal "+yiw')

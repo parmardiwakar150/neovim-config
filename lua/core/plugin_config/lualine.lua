@@ -7,7 +7,7 @@ require("lualine").setup({
 		disabled_filetypes = {
 			"NvimTree",
 		},
-		ignore_focus = {},
+		ignore_focus = { "" },
 		always_divide_middle = true,
 		globalstatus = false,
 		refresh = {

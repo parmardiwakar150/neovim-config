@@ -182,6 +182,10 @@ local plugins = {
 		end,
 	},
 	{
+		"ryanmsnyder/toggleterm-manager.nvim",
+		config = true,
+	},
+	{
 		"numToStr/Comment.nvim",
 		config = function()
 			require("Comment").setup()

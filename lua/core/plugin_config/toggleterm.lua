@@ -27,3 +27,15 @@ vim.keymap.set("n", "<leader>6", ":ToggleTerm 6<CR>", {})
 vim.keymap.set("n", "<leader>7", ":ToggleTerm 7<CR>", {})
 vim.keymap.set("n", "<leader>8", ":ToggleTerm 8<CR>", {})
 vim.keymap.set("n", "<leader>9", ":ToggleTerm 9<CR>", {})
+vim.keymap.set("n", "<leader>ft", ":Telescope toggleterm_manager<CR>", {})
+
+local toggleterm_manager = require("toggleterm-manager")
+local actions = toggleterm_manager.actions
+
+toggleterm_manager.setup({
+	mappings = {
+		i = {
+			["<CR>"] = { action = actions.toggle_term, exit_on_action = true },
+		},
+	},
+})

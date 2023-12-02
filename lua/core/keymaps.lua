@@ -24,6 +24,13 @@ vim.keymap.set("n", "<leader>cc", utils.compare_to_clipboard, opts)
 vim.keymap.set("n", "<leader>pw", utils.generate_password, opts)
 vim.keymap.set("n", "<leader>tt", ":TSBufToggle highlight<CR>", opts)
 vim.keymap.set("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", opts)
+vim.keymap.set("n", "<leader>fb", function()
+	if vim.bo.filetype == "python" then
+		vim.cmd("Black")
+	else
+		vim.lsp.buf.format()
+	end
+end, opts)
 vim.keymap.set("n", "<leader>od", function()
 	local devdocs_config_file_path = vim.fn.stdpath("config") .. "/lua/core/plugin_config/devdocs.lua"
 	vim.cmd("source " .. devdocs_config_file_path)

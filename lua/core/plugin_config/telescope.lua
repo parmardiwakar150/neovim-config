@@ -43,7 +43,7 @@ vim.keymap.set("n", "<leader>ss", ":Telescope session-lens search_session theme=
 vim.keymap.set("n", "<leader>l", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opts)
 vim.keymap.set("n", "<leader>gw", live_grep_args_shortcuts.grep_word_under_cursor)
 vim.keymap.set("v", "<leader>l", live_grep_args_shortcuts.grep_visual_selection)
-vim.keymap.set("n", "<leader>fb", builtin.current_buffer_fuzzy_find, opts)
+-- vim.keymap.set("n", "<leader>fb", builtin.current_buffer_fuzzy_find, opts)
 vim.keymap.set("n", "<leader>fm", modified_buffers, opts)
 vim.keymap.set("n", "<leader>m", function()
 	builtin.man_pages({ sections = { "ALL" } })

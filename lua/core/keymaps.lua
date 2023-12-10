@@ -23,6 +23,7 @@ vim.keymap.set("v", "<leader>b", utils.format_visual_selection_with_black_format
 vim.keymap.set("n", "<leader>cc", utils.compare_to_clipboard, opts)
 vim.keymap.set("n", "<leader>pw", utils.generate_password, opts)
 vim.keymap.set("n", "<leader>tt", ":TSBufToggle highlight<CR>", opts)
+vim.keymap.set("n", "<Leader>dt", ":DiagnosticToggle<CR>")
 vim.keymap.set("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", opts)
 vim.keymap.set("n", "<leader>fb", function()
 	if vim.bo.filetype == "python" then

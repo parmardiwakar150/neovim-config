@@ -201,15 +201,15 @@ local plugins = {
 		"abecodes/tabout.nvim",
 		dependencies = { "nvim-treesitter", "nvim-cmp" },
 	},
-	{
-		"luckasRanarison/nvim-devdocs",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-			"nvim-treesitter/nvim-treesitter",
-		},
-		opts = {},
-	},
+	-- {
+	-- 	"luckasRanarison/nvim-devdocs",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 		"nvim-treesitter/nvim-treesitter",
+	-- 	},
+	-- 	opts = {},
+	-- },
 	{
 		"sustech-data/wildfire.nvim",
 		event = "VeryLazy",

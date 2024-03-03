@@ -28,6 +28,10 @@ require("lspconfig").html.setup({
 	capabilities = capabilities,
 })
 
+require("lspconfig").gopls.setup({
+	capabilities = capabilities,
+})
+
 require("lspconfig").emmet_language_server.setup({
 	capabilities = capabilities,
 })

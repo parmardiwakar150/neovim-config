@@ -1,7 +1,7 @@
 local utils = require("core.utils")
 require("toggleterm").setup({
 	open_mapping = [[<c-\>]],
-	direction = "float",
+	direction = "horizontal",
 	float_opts = {
 		-- The border key is *almost* the same as 'nvim_open_win'
 		-- see :h nvim_open_win for details on borders however

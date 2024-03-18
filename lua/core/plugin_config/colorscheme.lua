@@ -51,7 +51,7 @@ require("onedark").setup({
 		background = true, -- use background color for virtual text
 	},
 })
-vim.cmd([[ colorscheme onedark ]])
+-- vim.cmd([[ colorscheme onedark ]])
 -- vim.api.nvim_set_hl(0, 'TelescopeSelection', { bg = '#343e4f' })
 vim.api.nvim_set_hl(0, "SagaBorder", { bg = "none", fg = "#61AFEE" })
 
@@ -94,7 +94,7 @@ require("kanagawa").setup({
 	keywordStyle = { italic = false },
 	statementStyle = { bold = false },
 	typeStyle = {},
-	transparent = false, -- do not set background color
+	transparent = true, -- do not set background color
 	dimInactive = false, -- dim inactive window `:h hl-NormalNC`
 	terminalColors = true, -- define vim.g.terminal_color_{0,17}
 	colors = { -- add/modify theme and palette colors
@@ -151,7 +151,7 @@ require("kanagawa").setup({
 })
 
 -- setup must be called before loading
--- vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme kanagawa")
 
 require("everblush").setup({
 	override = {

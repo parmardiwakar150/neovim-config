@@ -2,6 +2,13 @@ local utils = require("core.utils")
 require("toggleterm").setup({
 	open_mapping = [[<c-\>]],
 	direction = "horizontal",
+	size = 20,
+	on_open = function()
+		require("lualine").hide()
+	end,
+	on_close = function()
+		require("lualine").hide({ unhide = true })
+	end,
 	float_opts = {
 		-- The border key is *almost* the same as 'nvim_open_win'
 		-- see :h nvim_open_win for details on borders however

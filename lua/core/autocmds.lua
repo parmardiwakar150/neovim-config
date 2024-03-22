@@ -13,6 +13,15 @@ vim.api.nvim_create_autocmd("bufWritePost", {
 	group = group,
 })
 
+local sql_formatter = vim.api.nvim_create_augroup("sql-formatter", {})
+vim.api.nvim_create_autocmd("bufWritePost", {
+	pattern = "*.sql",
+	callback = function()
+		vim.cmd("silent :!sql-formatter -c ~/.config/sql-formatter/config.json --fix %")
+	end,
+	group = sql_formatter,
+})
+
 local format_on_save_group = vim.api.nvim_create_augroup("FormatOnSave", { clear = true })
 vim.api.nvim_create_autocmd("bufWritePost", {
 	pattern = { "*.c", "*.cpp" },

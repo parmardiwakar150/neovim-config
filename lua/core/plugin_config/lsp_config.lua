@@ -54,6 +54,10 @@ require("lspconfig").cssls.setup({
 	capabilities = capabilities,
 })
 
+require("lspconfig").dockerls.setup({
+	capabilities = capabilities,
+})
+
 require("lspconfig").lua_ls.setup({
 	capabilities = capabilities,
 	settings = {

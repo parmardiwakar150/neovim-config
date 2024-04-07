@@ -27,7 +27,7 @@ vim.keymap.set("n", "<Leader>dt", ":DiagnosticToggle<CR>")
 vim.keymap.set("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", opts)
 vim.keymap.set("n", "<leader>fb", function()
 	if vim.bo.filetype == "python" then
-		vim.cmd("Black")
+		vim.cmd("%!black -q -")
 	else
 		vim.lsp.buf.format()
 	end

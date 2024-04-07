@@ -161,7 +161,7 @@ local plugins = {
 	"nvim-tree/nvim-web-devicons",
 	"nvim-lualine/lualine.nvim",
 	"folke/trouble.nvim",
-	"psf/black",
+	-- "psf/black",
 	"unblevable/quick-scope",
 	"ghostbuster91/nvim-next",
 	"tpope/vim-surround",

@@ -168,6 +168,7 @@ local plugins = {
 	"ghostbuster91/nvim-next",
 	"tpope/vim-surround",
 	"tpope/vim-abolish",
+	"tpope/vim-sleuth",
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },

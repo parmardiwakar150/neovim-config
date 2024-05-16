@@ -56,8 +56,14 @@ vim.keymap.set("n", "<leader>tw", ":Telescope whop<CR>", { noremap = true, desc 
 require("telescope").setup({
 	defaults = {
 		prompt_prefix = " ",
+		preview = {
+			hide_on_startup = true,
+			filesize_limit = 0.5,
+			timeout = 100,
+		},
 		mappings = {
 			i = {
+				["<C-j>"] = require("telescope.actions.layout").toggle_preview,
 				["<esc>"] = actions.close,
 				["<c-d>"] = actions.delete_buffer,
 				["<c-q>"] = function(bufnr)

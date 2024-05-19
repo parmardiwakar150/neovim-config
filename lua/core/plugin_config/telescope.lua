@@ -55,7 +55,8 @@ vim.keymap.set("n", "<leader>tw", ":Telescope whop<CR>", { noremap = true, desc 
 
 require("telescope").setup({
 	defaults = {
-		prompt_prefix = " ",
+		prompt_prefix = "󰼛 ",
+		selection_caret = "󱞩 ",
 		preview = {
 			hide_on_startup = true,
 			filesize_limit = 0.5,

@@ -145,8 +145,8 @@ local plugins = {
 	-- telescope
 	{
 		"nvim-telescope/telescope.nvim",
-		version = "0.1.2",
-		-- or                            , branch = '0.1.x',
+		-- version = "0.1.2",
+		branch = "0.1.x",
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 	},
 	{ "nvim-telescope/telescope-live-grep-args.nvim" },

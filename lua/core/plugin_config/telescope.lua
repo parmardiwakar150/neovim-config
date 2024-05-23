@@ -66,6 +66,7 @@ require("telescope").setup({
 			i = {
 				["<C-j>"] = require("telescope.actions.layout").toggle_preview,
 				["<esc>"] = actions.close,
+				["<C-u>"] = false,
 				["<c-d>"] = actions.delete_buffer,
 				["<c-q>"] = function(bufnr)
 					actions.smart_send_to_qflist(bufnr)

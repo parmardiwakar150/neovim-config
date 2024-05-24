@@ -4,7 +4,7 @@ local keymap = vim.keymap.set
 -- If there is no definition, it will instead be hidden
 -- When you use an action in finder like "open vsplit",
 -- you can use <C-t> to jump back
-keymap("n", "gf", "<cmd>Lspsaga lsp_finder<CR>")
+-- keymap("n", "gf", "<cmd>Lspsaga lsp_finder<CR>")
 
 -- Code action
 keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
@@ -71,7 +71,7 @@ keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
 -- there is no information available.
 -- To disable it just use ":Lspsaga hover_doc ++quiet"
 -- Pressing the key twice will enter the hover window
-keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
+-- keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 
 -- If you want to keep the hover window in the top right hand corner,
 -- you can pass the ++keep argument
@@ -81,8 +81,8 @@ keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 keymap("n", "K", "<cmd>Lspsaga hover_doc ++keep<CR>")
 
 -- Call hierarchy
-keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
-keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
+-- keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
+-- keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 
 -- Floating terminal
-keymap({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
+-- keymap({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")

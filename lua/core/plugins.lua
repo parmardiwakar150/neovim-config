@@ -126,7 +126,7 @@ local plugins = {
 
 	-- git
 	{ "sindrets/diffview.nvim" },
-	"tpope/vim-fugitive",
+	-- "tpope/vim-fugitive",
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
@@ -167,7 +167,7 @@ local plugins = {
 	"unblevable/quick-scope",
 	"ghostbuster91/nvim-next",
 	"tpope/vim-surround",
-	"tpope/vim-abolish",
+	-- "tpope/vim-abolish",
 	"tpope/vim-sleuth",
 	{
 		"folke/todo-comments.nvim",

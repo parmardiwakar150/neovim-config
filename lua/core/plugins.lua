@@ -122,6 +122,7 @@ local plugins = {
 	"dmitmel/cmp-cmdline-history",
 	"hrsh7th/cmp-nvim-lsp-document-symbol",
 	"hrsh7th/cmp-nvim-lsp-signature-help",
+	"hrsh7th/cmp-calc",
 	{ "L3MON4D3/LuaSnip" },
 
 	-- git

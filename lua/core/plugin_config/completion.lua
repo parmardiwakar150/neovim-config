@@ -95,6 +95,7 @@ cmp.setup({
 		-- { name = 'vsnip' }, -- For vsnip users.
 		{ name = "luasnip" }, -- For luasnip users.
 		{ name = "nvim_lua" },
+		{ name = "calc" },
 		-- { name = 'ultisnips' }, -- For ultisnips users.
 		-- { name = 'snippy' }, -- For snippy users.
 	}),

@@ -17,6 +17,7 @@ local plugins = {
 	{ "catppuccin/nvim", name = "catppuccin", lazy = true },
 	{ "rebelot/kanagawa.nvim", lazy = true },
 	{ "folke/tokyonight.nvim", lazy = true },
+	{ "EdenEast/nightfox.nvim" },
 	{ "tiagovla/tokyodark.nvim", lazy = true },
 	{ "savq/melange-nvim", lazy = true },
 	{ "drewtempelmeyer/palenight.vim", lazy = true },

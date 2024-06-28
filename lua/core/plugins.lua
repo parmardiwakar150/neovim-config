@@ -51,6 +51,8 @@ local plugins = {
 		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
 	},
 	"mfussenegger/nvim-dap-python",
+	"leoluz/nvim-dap-go",
+	"theHamsta/nvim-dap-virtual-text",
 
 	-- session
 	"rmagatti/auto-session",
@@ -75,7 +77,14 @@ local plugins = {
 	"kiyoon/treesitter-indent-object.nvim",
 	"nvim-treesitter/nvim-treesitter-context",
 	"windwp/nvim-ts-autotag",
-	"Wansmer/treesj",
+	{
+		"Wansmer/treesj",
+		config = function()
+			require("treesj").setup({
+				max_join_length = 1000,
+			})
+		end,
+	},
 	{
 		"axelvc/template-string.nvim",
 		opts = { remove_template_string = true },

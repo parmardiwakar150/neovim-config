@@ -173,7 +173,7 @@ local plugins = {
 	"nvim-tree/nvim-tree.lua",
 	"nvim-tree/nvim-web-devicons",
 	"nvim-lualine/lualine.nvim",
-	"folke/trouble.nvim",
+	{ "folke/trouble.nvim", commit = "a8264a6" },
 	-- "psf/black",
 	"unblevable/quick-scope",
 	"ghostbuster91/nvim-next",

@@ -506,7 +506,20 @@ require("diffview").setup({
 	},
 })
 
+function DiffviewToggle()
+	local lib = require("diffview.lib")
+	local view = lib.get_current_view()
+	if view then
+		-- Current tabpage is a Diffview; close it
+		vim.cmd(":DiffviewClose")
+	else
+		-- No open Diffview exists: open a new one
+		vim.cmd(":DiffviewOpen")
+	end
+end
+
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<leader>od", ":DiffviewOpen<CR>", opts)
 vim.keymap.set("n", "<leader>cd", ":DiffviewClose<CR>", opts)
 vim.keymap.set("n", "<leader>hd", ":DiffviewFileHistory<CR>", opts)
+vim.keymap.set("n", "<leader>td", DiffviewToggle, opts)

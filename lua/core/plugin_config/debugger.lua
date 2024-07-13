@@ -36,6 +36,8 @@ end
 require("dap-go").setup()
 require("nvim-dap-virtual-text").setup({})
 
+vim.api.nvim_set_hl(0, "DapBreakpoint", { fg = "#cc241d" })
+vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpoint", linehl = "", numhl = "" })
 local opts = {}
 vim.keymap.set("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
 vim.keymap.set("n", "<Leader>dbc", "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>")
@@ -46,4 +48,5 @@ vim.keymap.set("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts)
 vim.keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
 vim.keymap.set("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 vim.keymap.set("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
+vim.keymap.set("n", "<leader>de", "<cmd>lua require'dapui'.eval()<cr>", opts)
 vim.keymap.set("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)

@@ -78,7 +78,7 @@ keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
 -- Note that if you use hover with ++keep, pressing this key again will
 -- close the hover window. If you want to jump to the hover window
 -- you should use the wincmd command "<C-w>w"
-keymap("n", "K", "<cmd>Lspsaga hover_doc ++keep<CR>")
+keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 
 -- Call hierarchy
 -- keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")

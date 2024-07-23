@@ -64,7 +64,7 @@ local function redir_shell_command(cmd, lines, vertical, stderr_p)
 					if vim.g.DEBUG then
 						log.info("stdout: " .. vim.inspect(output))
 					end
-					vim.api.nvim_buf_set_lines(stderr_buf, -2, -1, false, output)
+					vim.api.nvim_buf_set_text(stderr_buf, -1, -1, -1, -1, output)
 				end
 			end)()
 		end
@@ -96,7 +96,7 @@ shell_cmd: %s
 					if vim.g.DEBUG then
 						log.info("stdout: " .. vim.inspect(output))
 					end
-					vim.api.nvim_buf_set_lines(stdout_buf, -2, -1, false, output)
+					vim.api.nvim_buf_set_text(stdout_buf, -1, -1, -1, -1, output)
 				end
 			end)()
 		end,

@@ -34,8 +34,9 @@ require("onedark").setup({
 		-- purple = "#FFA759",
 	}, -- Override default colors
 	highlights = {
-		FloatBorder = { fg = "#2d3343", bg = "#2d3343" },
-		NormalFloat = { bg = "#2d3343" },
+		FloatBorder = { bg = "none" },
+		NormalFloat = { bg = "none" },
+		TreesitterContext = { bg = "#2d3343" },
 		IndentBlankLineContextChar = { fg = "#67b0e8" },
 		-- ["@keyword"] = { fg = '$green' },
 		-- ["@keyword.function"] = { fg = '$green' },
@@ -53,7 +54,7 @@ require("onedark").setup({
 })
 -- vim.cmd([[ colorscheme onedark ]])
 -- vim.api.nvim_set_hl(0, 'TelescopeSelection', { bg = '#343e4f' })
-vim.api.nvim_set_hl(0, "SagaBorder", { bg = "none", fg = "#61AFEE" })
+-- vim.api.nvim_set_hl(0, "SagaBorder", { bg = "none", fg = "#61AFEE" })
 
 require("gruvbox").setup({
 	undercurl = false,

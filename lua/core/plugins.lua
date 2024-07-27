@@ -25,6 +25,26 @@ local plugins = {
 	{ "sainnhe/gruvbox-material", lazy = true },
 	{ "navarasu/onedark.nvim", lazy = true },
 	{ "NTBBloodbath/doom-one.nvim", lazy = true },
+	{
+		"sainnhe/sonokai",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.g.sonokai_enable_italic = false
+			vim.g.sonokai_transparent_background = 1
+			vim.g.sonokai_float_style = "dim"
+		end,
+	},
+	{
+		"sainnhe/edge",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.g.sonokai_enable_italic = false
+			vim.g.edge_transparent_background = 1
+			vim.g.edge_float_style = "dim"
+		end,
+	},
 	{ "nvimdev/zephyr-nvim", lazy = true },
 	{ "RRethy/nvim-base16", lazy = true },
 	{ "Shatur/neovim-ayu", lazy = true },

@@ -1,7 +1,7 @@
 local utils = require("core.utils")
 require("toggleterm").setup({
 	open_mapping = [[<c-\>]],
-	direction = "horizontal",
+	direction = "float",
 	size = 20,
 	on_open = function()
 		require("lualine").hide()

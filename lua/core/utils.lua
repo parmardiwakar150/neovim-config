@@ -43,7 +43,7 @@ M.compare_to_clipboard = function()
 end
 
 M.get_float_win_width = function()
-	local width_ratio = 0.6
+	local width_ratio = 0.8
 	local columns = vim.o.columns
 	if columns < 130 then
 		width_ratio = 0.9
@@ -54,7 +54,7 @@ M.get_float_win_width = function()
 end
 
 M.get_float_win_height = function()
-	local height_ratio = 0.7
+	local height_ratio = 0.8
 	local lines = vim.o.lines
 	if lines < 40 then
 		height_ratio = 0.9

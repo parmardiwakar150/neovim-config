@@ -25,6 +25,11 @@ local plugins = {
 	{ "sainnhe/gruvbox-material", lazy = true },
 	{ "navarasu/onedark.nvim", lazy = true },
 	{ "NTBBloodbath/doom-one.nvim", lazy = true },
+	"projekt0n/github-nvim-theme",
+	"rmehri01/onenord.nvim",
+	"Alexis12119/nightly.nvim",
+	"mellow-theme/mellow.nvim",
+	"matthewmturner/tuscany",
 	{
 		"sainnhe/sonokai",
 		lazy = false,

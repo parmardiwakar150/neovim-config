@@ -85,7 +85,7 @@ require("lspconfig").lua_ls.setup({
 		},
 	},
 })
-require("lspconfig").tsserver.setup({
+require("lspconfig").ts_ls.setup({
 	capabilities = capabilities,
 })
 require("lspconfig").tailwindcss.setup({

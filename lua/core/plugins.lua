@@ -100,8 +100,6 @@ local plugins = {
 	{ "lukas-reineke/indent-blankline.nvim", version = "2.20.8" },
 	"hiphish/rainbow-delimiters.nvim",
 	"kiyoon/treesitter-indent-object.nvim",
-	"nvim-treesitter/nvim-treesitter-context",
-	"windwp/nvim-ts-autotag",
 	{
 		"Wansmer/treesj",
 		config = function()
@@ -110,11 +108,6 @@ local plugins = {
 			})
 		end,
 	},
-	{
-		"axelvc/template-string.nvim",
-		opts = { remove_template_string = true },
-	},
-	"ziontee113/syntax-tree-surfer",
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-treesitter" },
@@ -193,18 +186,14 @@ local plugins = {
 	{ "biozz/whop.nvim", opts = {} },
 
 	-- miscellaneous
-	"rmagatti/alternate-toggler",
-	"fedepujol/move.nvim",
 	"nvim-tree/nvim-tree.lua",
 	"nvim-tree/nvim-web-devicons",
 	"nvim-lualine/lualine.nvim",
-	{ "folke/trouble.nvim", commit = "a8264a6" },
+	{ "folke/trouble.nvim" },
 	-- "psf/black",
 	"unblevable/quick-scope",
 	"ghostbuster91/nvim-next",
 	"tpope/vim-surround",
-	-- "tpope/vim-abolish",
-	"tpope/vim-sleuth",
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -212,13 +201,6 @@ local plugins = {
 	},
 	{
 		"numToStr/Navigator.nvim",
-	},
-	{
-		"akinsho/toggleterm.nvim",
-		version = "*",
-		config = function()
-			require("toggleterm").setup()
-		end,
 	},
 	{
 		"numToStr/Comment.nvim",
@@ -235,23 +217,6 @@ local plugins = {
 	{
 		"abecodes/tabout.nvim",
 		dependencies = { "nvim-treesitter", "nvim-cmp" },
-	},
-	-- {
-	-- 	"luckasRanarison/nvim-devdocs",
-	-- 	dependencies = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"nvim-telescope/telescope.nvim",
-	-- 		"nvim-treesitter/nvim-treesitter",
-	-- 	},
-	-- 	opts = {},
-	-- },
-	{
-		"sustech-data/wildfire.nvim",
-		event = "VeryLazy",
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		config = function()
-			require("wildfire").setup()
-		end,
 	},
 }
 local opts = {

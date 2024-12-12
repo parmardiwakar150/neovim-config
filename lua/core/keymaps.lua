@@ -25,6 +25,7 @@ vim.keymap.set("n", "<leader>pw", utils.generate_password, opts)
 vim.keymap.set("n", "<leader>tt", ":TSBufToggle highlight<CR>", opts)
 vim.keymap.set("n", "<Leader>dt", ":DiagnosticToggle<CR>")
 vim.keymap.set("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", opts)
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 vim.keymap.set("n", "<leader>fb", function()
 	if vim.bo.filetype == "python" then
 		vim.cmd("%!black -q -")

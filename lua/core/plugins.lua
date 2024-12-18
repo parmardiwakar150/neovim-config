@@ -186,6 +186,7 @@ local plugins = {
 	{ "biozz/whop.nvim", opts = {} },
 
 	-- miscellaneous
+	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 	"nvim-tree/nvim-tree.lua",
 	"nvim-tree/nvim-web-devicons",
 	"nvim-lualine/lualine.nvim",

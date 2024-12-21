@@ -570,6 +570,15 @@ require("nightfox").setup({
 	groups = {},
 })
 
+require("vscode").setup({
+	transparent = true,
+	italic_comments = true,
+	underline_links = true,
+	disable_nvimtree_bg = true,
+})
+
+vim.cmd("colorscheme vscode")
+
 -- setup must be called before loading
 -- vim.cmd("colorscheme carbonfox")
 

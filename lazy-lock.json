@@ -76,6 +76,7 @@
   "trouble.nvim": { "branch": "main", "commit": "46cf952fc115f4c2b98d4e208ed1e2dce08c9bf6" },
   "tuscany": { "branch": "main", "commit": "bfa670bd17dff037738970ed5c86b1166afc07c1" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
+  "vscode.nvim": { "branch": "main", "commit": "18097b7aa47538afa780c821309c8b992972d726" },
   "whop.nvim": { "branch": "main", "commit": "fcdeaeebb998631b722b345ca47cebd6bb817396" },
   "zephyr-nvim": { "branch": "main", "commit": "7fd86b7164442d3b5ec2c81b2694d040e716b5cf" }
 }

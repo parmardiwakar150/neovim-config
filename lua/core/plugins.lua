@@ -30,6 +30,7 @@ local plugins = {
 	"Alexis12119/nightly.nvim",
 	"mellow-theme/mellow.nvim",
 	"matthewmturner/tuscany",
+	"Mofiqul/vscode.nvim",
 	{
 		"sainnhe/sonokai",
 		lazy = false,

@@ -571,7 +571,7 @@ require("nightfox").setup({
 })
 
 require("vscode").setup({
-	transparent = true,
+	-- transparent = true,
 	italic_comments = true,
 	underline_links = true,
 	disable_nvimtree_bg = true,

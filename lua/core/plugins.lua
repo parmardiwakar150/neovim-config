@@ -31,6 +31,7 @@ local plugins = {
 	"mellow-theme/mellow.nvim",
 	"matthewmturner/tuscany",
 	"Mofiqul/vscode.nvim",
+	"bettervim/yugen.nvim",
 	{
 		"sainnhe/sonokai",
 		lazy = false,

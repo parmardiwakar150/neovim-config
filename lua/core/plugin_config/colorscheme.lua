@@ -608,7 +608,8 @@ require("vscode").setup({
 	},
 })
 
-vim.cmd("colorscheme vscode")
+-- vim.cmd("colorscheme vscode")
+vim.cmd("colorscheme melange")
 
 -- setup must be called before loading
 -- vim.cmd("colorscheme carbonfox")

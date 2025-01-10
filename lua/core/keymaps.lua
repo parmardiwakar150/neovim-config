@@ -47,3 +47,6 @@ vim.keymap.set("n", "<leader>p", '"+p', opts) -- paste after cursor
 vim.keymap.set("n", "<leader>P", '"+P', opts) -- paste before cursor
 -- vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 -- vim.keymap.set('v', 'K', ":m '>-2<CR>gv=gv")
+
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+vim.keymap.set("n", "gt", vim.lsp.buf.type_definition)

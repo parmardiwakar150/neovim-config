@@ -110,12 +110,12 @@ require("kanagawa").setup({
 	},
 	overrides = function(colors)
 		local theme = colors.theme
+		local palette = colors.palette
 		return {
 			NormalFloat = { bg = "none" },
-			FloatBorder = { bg = "none" },
+			FloatBorder = { bg = "none", fg = palette.dragonYellow },
 			FloatTitle = { bg = "none" },
 
-			Boolean = { bold = false },
 			["@text.uri"] = { underline = false },
 
 			-- Save an hlgroup with dark background and dimmed foreground
@@ -142,11 +142,29 @@ require("kanagawa").setup({
 			PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
 			PmenuSbar = { bg = theme.ui.bg_m1 },
 			PmenuThumb = { bg = theme.ui.bg_p2 },
+			Boolean = { fg = palette.dragonPink, bold = false },
+			Constant = { fg = palette.dragonPink },
+
+			Identifier = { fg = palette.dragonBlue },
+			Statement = { fg = palette.dragonBlue }, -- logic, focus
+			Operator = { fg = palette.dragonGray2 },
+			Keyword = { fg = palette.dragonRed }, -- strength of builtin keywords (core)
+			-- Function = { fg = palette.dragonGreen }, -- v1. i like green functions
+			Function = { fg = palette.dragonOrange }, -- v2. action
+
+			-- Type = { fg = palette.dragonYellow }, -- v1. creativity of custom types
+			Type = { fg = palette.dragonGreen }, -- v2. Newness
+
+			-- Special = { fg = palette.dragonOrange }, -- v1. which emphesises the maturity over the new types
+			Special = { fg = palette.dragonYellow }, -- v2. cheers, that this type is builtin
+
+			["@lsp.typemod.function.readonly"] = { fg = palette.dragonBlue },
+			["@variable.member"] = { fg = palette.dragonBlue },
 		}
 	end,
-	theme = "wave", -- Load "wave" theme when 'background' option is not set
+	theme = "dragon", -- Load "wave" theme when 'background' option is not set
 	background = { -- map the value of 'background' option to a theme
-		dark = "wave", -- try "dragon" !
+		dark = "dragon", -- try "dragon" !
 		light = "lotus",
 	},
 })
@@ -522,8 +540,8 @@ require("catppuccin").setup({
 		end,
 	},
 })
-vim.cmd("colors catppuccin")
-vim.cmd("highlight clear TreesitterContextBottom")
+-- vim.cmd("colors catppuccin")
+-- vim.cmd("highlight clear TreesitterContextBottom")
 
 -- Default options
 require("nightfox").setup({
@@ -609,7 +627,7 @@ require("vscode").setup({
 })
 
 -- vim.cmd("colorscheme vscode")
-vim.cmd("colorscheme melange")
+-- vim.cmd("colorscheme melange")
 
 -- setup must be called before loading
 -- vim.cmd("colorscheme carbonfox")

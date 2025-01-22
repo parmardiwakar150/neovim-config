@@ -627,10 +627,12 @@ require("vscode").setup({
 })
 
 -- vim.cmd("colorscheme vscode")
--- vim.cmd("colorscheme melange")
+vim.cmd("colorscheme melange")
+vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { fg = "#5e636e" })
+vim.api.nvim_set_hl(0, "@comment", { fg = "#a89984" })
 
 -- setup must be called before loading
--- vim.cmd("colorscheme carbonfox")
+-- vim.cmd("colorscheme nordfox")
 
 local opts = { noremap = true, silent = true }
 

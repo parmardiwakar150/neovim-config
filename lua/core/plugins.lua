@@ -77,7 +77,7 @@ local plugins = {
 		"rcarriga/nvim-dap-ui",
 		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
 	},
-	"mfussenegger/nvim-dap-python",
+	-- "mfussenegger/nvim-dap-python",
 	"leoluz/nvim-dap-go",
 	"theHamsta/nvim-dap-virtual-text",
 
@@ -183,7 +183,7 @@ local plugins = {
 	{ "nvim-telescope/telescope-live-grep-args.nvim" },
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
-		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
 	},
 	{ "biozz/whop.nvim", opts = {} },
 

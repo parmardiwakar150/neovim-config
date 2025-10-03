@@ -7,7 +7,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- require("lspconfig").pylsp.setup {
 --     capabilities = capabilities,
 -- }
-require("lspconfig").pyright.setup({
+vim.lsp.config("pyright", {
 	-- capabilities = (function()
 	--     local capabilities = vim.lsp.protocol.make_client_capabilities()
 	--     capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
@@ -26,39 +26,39 @@ require("lspconfig").pyright.setup({
 		},
 	},
 })
-require("lspconfig").html.setup({
+vim.lsp.config("html", {
 	capabilities = capabilities,
 })
 
-require("lspconfig").gopls.setup({
+vim.lsp.config("gopls", {
 	capabilities = capabilities,
 })
 
-require("lspconfig").emmet_language_server.setup({
+vim.lsp.config("emmet_language_server", {
 	capabilities = capabilities,
 })
 
-require("lspconfig").zls.setup({
+vim.lsp.config("zls", {
 	capabilities = capabilities,
 })
 
-require("lspconfig").rust_analyzer.setup({
+vim.lsp.config("rust_analyzer", {
 	capabilities = capabilities,
 })
 
-require("lspconfig").clangd.setup({
+vim.lsp.config("clangd", {
 	capabilities = capabilities,
 })
 
-require("lspconfig").cssls.setup({
+vim.lsp.config("cssls", {
 	capabilities = capabilities,
 })
 
-require("lspconfig").dockerls.setup({
+vim.lsp.config("dockerls", {
 	capabilities = capabilities,
 })
 
-require("lspconfig").lua_ls.setup({
+vim.lsp.config("lua_ls", {
 	capabilities = capabilities,
 	settings = {
 		Lua = {
@@ -85,10 +85,10 @@ require("lspconfig").lua_ls.setup({
 		},
 	},
 })
-require("lspconfig").ts_ls.setup({
+vim.lsp.config("ts_ls", {
 	capabilities = capabilities,
 })
-require("lspconfig").tailwindcss.setup({
+vim.lsp.config("tailwindcss", {
 	capabilities = capabilities,
 })
 

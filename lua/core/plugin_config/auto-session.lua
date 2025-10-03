@@ -9,7 +9,8 @@ require("auto-session").setup({
 	post_restore_cmds = { change_nvim_tree_dir },
 	pre_save_cmds = { "NvimTreeClose" },
 	session_lens = {
-		theme_conf = {
+		picker = "telescope",
+		picker_opts = {
 			layout_strategy = "bottom_pane",
 			layout_config = {
 				height = 25,
@@ -24,4 +25,4 @@ require("auto-session").setup({
 })
 
 local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<leader>ss", require("auto-session.session-lens").search_session, opts)
+vim.keymap.set("n", "<leader>ss", ":AutoSession search <CR>", opts)

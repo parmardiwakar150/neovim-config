@@ -251,7 +251,7 @@ require("catppuccin").setup({
 			crust = "#141617",
 		},
 	},
-	transparent_background = false,
+	transparent_background = true,
 	show_end_of_buffer = false,
 	integration_default = false,
 	integrations = {
@@ -421,6 +421,12 @@ require("catppuccin").setup({
 				TSURI = { fg = colors.blue },
 				TSVariable = { fg = colors.text },
 				TSVariableBuiltin = { fg = colors.mauve },
+				Cursor = {
+					fg = colors.base,
+					bg = colors.surface1,
+				},
+				QuickScopePrimary = { fg = colors.green },
+				-- QuickScopeSecondary = { fg = colors.green },
 
 				["@annotation"] = { link = "TSAnnotation" },
 				["@attribute"] = { link = "TSAttribute" },

@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "pyright", "gopls", "lua_ls" },
+	ensure_installed = { "pyright", "gopls", "lua_ls", "bufls", "dockerls" },
 })
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -55,6 +55,14 @@ vim.lsp.config("cssls", {
 })
 
 vim.lsp.config("dockerls", {
+	capabilities = capabilities,
+})
+
+vim.lsp.config("bufls", {
+	capabilities = capabilities,
+})
+
+vim.lsp.config("solargraph", {
 	capabilities = capabilities,
 })
 

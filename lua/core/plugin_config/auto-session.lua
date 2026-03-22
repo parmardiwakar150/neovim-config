@@ -1,6 +1,6 @@
 local function change_nvim_tree_dir()
-	local nvim_tree = require("nvim-tree")
-	nvim_tree.change_dir(vim.fn.getcwd())
+	local api = require("nvim-tree.api")
+	api.tree.change_root(vim.fn.getcwd())
 end
 
 require("auto-session").setup({

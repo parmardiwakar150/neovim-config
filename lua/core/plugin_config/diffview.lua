@@ -519,7 +519,7 @@ function DiffviewToggle()
 end
 
 local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<leader>od", ":DiffviewOpen<CR>", opts)
-vim.keymap.set("n", "<leader>cd", ":DiffviewClose<CR>", opts)
+-- vim.keymap.set("n", "<leader>od", ":DiffviewOpen<CR>", opts)
+-- vim.keymap.set("n", "<leader>cd", ":DiffviewClose<CR>", opts)
 vim.keymap.set("n", "<leader>hd", ":DiffviewFileHistory<CR>", opts)
 vim.keymap.set("n", "<leader>td", DiffviewToggle, opts)

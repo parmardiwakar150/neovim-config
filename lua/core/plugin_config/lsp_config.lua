@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "pyright", "gopls", "lua_ls", "bufls", "dockerls" },
+	ensure_installed = { "pyright", "gopls", "lua_ls", "buf_ls", "dockerls" },
 })
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()

@@ -72,15 +72,6 @@ local plugins = {
 		end,
 	},
 
-	-- debugger
-	{
-		"rcarriga/nvim-dap-ui",
-		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
-	},
-	-- "mfussenegger/nvim-dap-python",
-	"leoluz/nvim-dap-go",
-	"theHamsta/nvim-dap-virtual-text",
-
 	-- session management
 	{
 		"rmagatti/auto-session",
@@ -90,6 +81,7 @@ local plugins = {
 	-- treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
+		branch = "main",
 		dependencies = {
 			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
@@ -107,7 +99,22 @@ local plugins = {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
+		branch = "main",
 		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-treesitter" },
+		config = function()
+			vim.keymap.set({ "x", "o" }, "af", function()
+				require("nvim-treesitter-textobjects.select").select_textobject("@function.outer", "textobjects")
+			end)
+			vim.keymap.set({ "x", "o" }, "if", function()
+				require("nvim-treesitter-textobjects.select").select_textobject("@function.inner", "textobjects")
+			end)
+			vim.keymap.set({ "x", "o" }, "ac", function()
+				require("nvim-treesitter-textobjects.select").select_textobject("@class.outer", "textobjects")
+			end)
+			vim.keymap.set({ "x", "o" }, "ic", function()
+				require("nvim-treesitter-textobjects.select").select_textobject("@class.inner", "textobjects")
+			end)
+		end,
 	},
 
 	-- LSP
